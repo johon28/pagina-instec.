@@ -1,0 +1,17 @@
+{
+  "subtitulo": "Música, danza, color y tradición: toda la comunidad educativa de la INSTEC se une para celebrar la identidad cultural de nuestra tierra ribereña.",
+  "fotos": [
+    {
+      "imagen": "/imagenes/semana-cultural-desfile.jpg",
+      "pie": "💃 Desfile folclórico",
+      "titulo": "Tradición que se baila",
+      "texto": "Polleras coloridas, sombreros vueltiaos y comparsas llenan de alegría nuestro corregimiento en un desfile que honra la herencia cultural del Caribe colombiano."
+    },
+    {
+      "imagen": "/imagenes/semana-cultural-santa-pabla.jpg",
+      "pie": "🏫 Sede Santa Pabla presente",
+      "titulo": "Todas las sedes, una sola fiesta",
+      "texto": "Estudiantes, docentes y familias de nuestras sedes participan con orgullo, mostrando el talento y la riqueza cultural de cada vereda."
+    }
+  ]
+}

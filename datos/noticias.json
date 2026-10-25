@@ -1,0 +1,30 @@
+[
+  {
+    "etiqueta": "Formación",
+    "titulo": "Capacitaciones Docentes",
+    "descripcion": "Nuestros docentes participaron en jornadas de formación y actualización pedagógica, fortaleciendo sus competencias para brindar una educación de calidad a los estudiantes de la INSTEC.",
+    "imagen": "/imagenes/noticia-capacitaciones-docentes.jpg",
+    "fecha": "Jornada institucional"
+  },
+  {
+    "etiqueta": "Deporte",
+    "titulo": "Inauguración Juegos «Conéctate al Deporte»",
+    "descripcion": "Con gran entusiasmo se inauguraron los Juegos Intercursos Coyongal, un espacio que promueve el deporte, la sana convivencia, el trabajo en equipo y la integración entre todas las sedes de la institución.",
+    "imagen": "/imagenes/noticia-juegos-conectate-deporte.jpg",
+    "fecha": "Juegos Intercursos"
+  },
+  {
+    "etiqueta": "Democracia",
+    "titulo": "Aspirantes a Personería 2026",
+    "descripcion": "Se presentaron los candidatos a la Personería Estudiantil 2026: Juan Esteban Medina Bello y María Paula Serpa Atencia, en el marco del ejercicio democrático y la formación ciudadana del Gobierno Escolar.",
+    "imagen": "/imagenes/noticia-personeria-2026.jpg",
+    "fecha": "Gobierno Escolar"
+  },
+  {
+    "etiqueta": "Ambiente",
+    "titulo": "Día del Medio Ambiente",
+    "descripcion": "Bajo el lema «Los Guardianes del Cuidado», los estudiantes lideraron actividades de cuidado del entorno y conciencia ambiental, reafirmando el compromiso de la INSTEC con la protección de la naturaleza.",
+    "imagen": "/imagenes/noticia-dia-medio-ambiente.jpg",
+    "fecha": "Proyecto ambiental"
+  }
+]

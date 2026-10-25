@@ -1,0 +1,13 @@
+Coloca aquí los archivos PDF de la institución, por ejemplo:
+  PEI.pdf
+  manual-convivencia.pdf
+  calendario-academico-2025.pdf
+  plan-de-estudios.pdf
+  sistema-evaluacion-siee.pdf
+  plan-mejoramiento-pmi.pdf
+  actas-gobierno-escolar.pdf
+  tabla-costos-2026.pdf
+
+Luego avísale a Claude los nombres para enlazar cada tarjeta,
+o edita el index.html cambiando el enlace de cada documento a
+"documentos/NOMBRE-DEL-ARCHIVO.pdf".
