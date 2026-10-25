@@ -1,0 +1,9 @@
+# La página no necesita compilarse: Netlify publica la carpeta tal cual.
+[build]
+  publish = "."
+
+# Los datos editables desde el panel se revisan en cada visita para mostrar siempre lo último.
+[[headers]]
+  for = "/datos/*"
+  [headers.values]
+    Cache-Control = "no-cache"

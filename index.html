@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INSTEC – Institución Educativa de Coyongal</title>
+<meta name="description" content="Institución Educativa de Coyongal – INSTEC. Educación oficial rural de preescolar a media académica en Coyongal, Magangué, Bolívar. 10 sedes, enfoque CRESE.">
+<meta property="og:title" content="INSTEC – Institución Educativa de Coyongal">
+<meta property="og:description" content="Educación rural de calidad desde el corazón de Bolívar. Valores · Disciplina · Progreso.">
+<meta property="og:image" content="imagenes/escudo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="imagenes/escudo.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Open Sans',sans-serif;background:#f4f6fb;color:#1a2340;overflow-x:hidden;}
+:root{--azul:#1565C0;--azul-o:#0D47A1;--azul-c:#1976D2;--verde:#1B5E20;--dorado:#F9A825;--blanco:#fff;--gris:#f4f6fb;--texto:#1a2340;}
+
+/* TOP BAR */
+.topbar{background:var(--azul-o);color:rgba(255,255,255,.8);font-size:12px;padding:7px 40px;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif;font-weight:500;letter-spacing:.5px;}
+.topbar a{color:rgba(255,255,255,.8);text-decoration:none;transition:color .2s;}
+.topbar a:hover{color:var(--dorado);}
+.topbar-right{display:flex;gap:20px;align-items:center;}
+
+/* HEADER */
+header{background:var(--blanco);box-shadow:0 2px 16px rgba(21,101,192,.12);position:sticky;top:0;z-index:999;}
+.header-main{display:flex;align-items:center;justify-content:space-between;padding:12px 40px;border-bottom:1px solid #e0e4ef;}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;}
+.brand-escudo{width:62px;height:62px;object-fit:contain;}
+.brand-nombre{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--azul-o);line-height:1.2;text-transform:uppercase;letter-spacing:.5px;}
+.brand-sub{font-size:10px;color:var(--azul-c);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:2px;}
+.brand-dane{font-size:10px;color:#888;margin-top:2px;font-weight:500;}
+.header-right{display:flex;gap:10px;align-items:center;}
+.btn-mat{background:var(--dorado);color:var(--azul-o);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:9px 20px;border:none;cursor:pointer;text-decoration:none;border-radius:3px;transition:all .3s;}
+.btn-mat:hover{background:#fbc02d;transform:translateY(-2px);box-shadow:0 4px 16px rgba(249,168,37,.4);}
+.btn-web{background:transparent;border:2px solid var(--azul);color:var(--azul);font-family:'Montserrat',sans-serif;font-weight:700;font-size:11px;letter-spacing:1px;text-transform:uppercase;padding:8px 18px;cursor:pointer;text-decoration:none;border-radius:3px;transition:all .3s;}
+.btn-web:hover{background:var(--azul);color:#fff;}
+
+/* NAV */
+nav.main-nav{background:var(--azul);}
+.nav-list{display:flex;list-style:none;padding:0 32px;margin:0;align-items:stretch;}
+.nav-list>li{position:relative;}
+.nav-list>li>a{display:flex;align-items:center;gap:5px;padding:0 18px;height:48px;color:rgba(255,255,255,.92);font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-decoration:none;transition:all .25s;white-space:nowrap;border-bottom:3px solid transparent;}
+.arrow{font-size:8px;opacity:.7;transition:transform .3s;}
+.nav-list>li:hover>a{background:rgba(255,255,255,.12);border-bottom-color:var(--dorado);color:#fff;}
+.nav-list>li:hover>a .arrow{transform:rotate(180deg);}
+.dropdown{position:absolute;top:100%;left:0;background:var(--blanco);min-width:240px;box-shadow:0 8px 32px rgba(21,101,192,.18);opacity:0;visibility:hidden;transform:translateY(-8px);transition:all .25s;z-index:1000;border-top:3px solid var(--dorado);}
+.nav-list>li:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.dropdown li{list-style:none;}
+.dropdown a{display:flex;align-items:center;gap:8px;padding:10px 18px;font-size:13px;color:var(--texto);text-decoration:none;font-family:'Open Sans',sans-serif;font-weight:500;border-bottom:1px solid #f0f2f8;transition:all .2s;}
+.dropdown a::before{content:'›';color:var(--azul);font-size:15px;font-weight:700;}
+.dropdown a:hover{background:var(--gris);color:var(--azul);padding-left:24px;}
+.dropdown li:last-child a{border-bottom:none;}
+.nav-mobile{display:none;background:var(--azul-o);padding:6px 0 14px;border-top:3px solid var(--dorado);}
+.nav-mobile.open{display:block;}
+.nav-mobile a,.nav-mobile summary{display:flex;align-items:center;justify-content:space-between;color:#fff;padding:14px 20px;font-size:13.5px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.1);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:.3px;cursor:pointer;}
+.nav-mobile summary{list-style:none;}
+.nav-mobile summary::-webkit-details-marker{display:none;}
+.nav-mobile summary::after{content:'▾';font-size:14px;opacity:.75;transition:transform .25s;}
+.nav-mobile details[open] summary::after{transform:rotate(180deg);}
+.nav-mobile details[open] summary{background:rgba(255,255,255,.08);color:var(--dorado);}
+.nav-mobile details a{padding:12px 20px 12px 36px;font-size:13px;font-weight:600;background:rgba(0,0,0,.15);color:rgba(255,255,255,.88);}
+.nav-mobile a:active,.nav-mobile summary:active{background:rgba(255,255,255,.14);}
+.nav-mobile .nm-btns{display:flex;gap:10px;padding:16px 20px 4px;}
+.nav-mobile .nm-btns a{flex:1;justify-content:center;border:none;border-radius:6px;padding:12px;font-size:11.5px;text-transform:uppercase;letter-spacing:1px;}
+.nav-mobile .nm-mat{background:var(--dorado);color:var(--azul-o) !important;}
+.nav-mobile .nm-fb{background:#1877F2;}
+.nav-list>li:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+
+/* ═══════════════════ PAGE ROUTER (SPA) ═══════════════════ */
+[data-page]{display:none;}
+[data-page].page-active{display:block;}
+.nav-list>li>a.active-tab,.nav-mobile a.active-tab{background:rgba(255,255,255,.16);border-bottom-color:var(--dorado);color:#fff;}
+
+/* ═══════════════════ HERO CAROUSEL (REAL PHOTOS) ═══════════════════ */
+.hero{position:relative;overflow:hidden;background:#0a1a2e;}
+.carousel{position:relative;width:100%;height:420px;overflow:hidden;background:#0a1a2e;}
+.c-slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity .8s ease;z-index:1;}
+.c-slide.active{opacity:1;z-index:2;}
+.c-slide img.slide-photo{width:100%;height:100%;object-fit:cover;display:block;}
+/* Carousel buttons */
+.cbtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.18);backdrop-filter:blur(8px);border:2px solid rgba(255,255,255,.35);color:#fff;width:50px;height:50px;border-radius:50%;cursor:pointer;font-size:19px;transition:all .3s;z-index:10;display:flex;align-items:center;justify-content:center;}
+.cbtn:hover{background:rgba(249,168,37,.85);border-color:var(--dorado);}
+.cprev{left:20px;}.cnext{right:20px;}
+/* Dots */
+.cdots{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
+.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.38);cursor:pointer;transition:all .35s;border:2px solid rgba(255,255,255,.55);}
+.dot.active{background:var(--dorado);border-color:var(--dorado);width:28px;border-radius:4px;}
+/* Slide counter */
+.slide-counter{position:absolute;top:20px;right:24px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;color:rgba(255,255,255,.65);z-index:10;letter-spacing:2px;}
+
+/* ═══════════════════ NOTICIAS / EVENTOS ═══════════════════ */
+.news-sec{background:var(--gris);padding:56px 0 60px;}
+.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.news-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(13,71,161,.10);display:flex;flex-direction:column;transition:transform .35s ease,box-shadow .35s ease;}
+.news-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(13,71,161,.20);}
+.news-thumb{position:relative;height:180px;overflow:hidden;}
+.news-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+.news-card:hover .news-thumb img{transform:scale(1.06);}
+.news-tag{position:absolute;top:12px;left:12px;background:var(--dorado);color:var(--azul-o);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:5px 11px;border-radius:20px;z-index:2;}
+.news-num{position:absolute;top:12px;right:12px;width:30px;height:30px;border-radius:50%;background:rgba(13,71,161,.92);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:2;}
+.news-body{padding:18px 20px 22px;display:flex;flex-direction:column;flex:1;}
+.news-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--azul-o);line-height:1.3;margin-bottom:9px;}
+.news-desc{font-size:13px;color:#555;line-height:1.6;flex:1;}
+.news-date{margin-top:14px;font-size:11px;color:var(--azul-c);font-weight:700;letter-spacing:.5px;display:flex;align-items:center;gap:6px;}
+
+/* ═══════════════════ SEMANA CULTURAL ═══════════════════ */
+.cultura-sec{position:relative;overflow:hidden;padding:96px 0 80px;background:radial-gradient(circle at 8% 20%,rgba(229,57,53,.16) 0,transparent 32%),radial-gradient(circle at 92% 30%,rgba(0,172,193,.16) 0,transparent 30%),radial-gradient(circle at 50% 100%,rgba(249,168,37,.22) 0,transparent 45%),linear-gradient(180deg,#fffaf0 0%,#fff3e0 100%);}
+/* banderines */
+.cultura-sec::before{content:'';position:absolute;top:0;left:0;right:0;height:46px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='46'%3E%3Cpath d='M0 4 Q100 14 200 4' stroke='%23795548' stroke-width='2' fill='none'/%3E%3Cpolygon points='4,5 36,7 20,38' fill='%23E53935'/%3E%3Cpolygon points='44,8 76,9 60,42' fill='%23F9A825'/%3E%3Cpolygon points='84,9 116,9 100,42' fill='%2300ACC1'/%3E%3Cpolygon points='124,9 156,8 140,42' fill='%23D81B60'/%3E%3Cpolygon points='164,7 196,5 180,38' fill='%2343A047'/%3E%3C/svg%3E") repeat-x;background-size:200px 46px;animation:bandera 3.5s ease-in-out infinite alternate;transform-origin:top;}
+@keyframes bandera{from{transform:skewX(-1.5deg);}to{transform:skewX(1.5deg);}}
+/* confeti */
+.cultura-sec::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(circle,#E53935 2.5px,transparent 3px),radial-gradient(circle,#F9A825 2.5px,transparent 3px),radial-gradient(circle,#00ACC1 2px,transparent 2.5px),radial-gradient(circle,#D81B60 2px,transparent 2.5px);background-size:190px 170px,230px 210px,160px 200px,260px 240px;background-position:10px 60px,90px 120px,40px 160px,150px 30px;}
+.cultura-sec .wrap{position:relative;z-index:1;}
+.cultura-head{text-align:center;margin-bottom:46px;}
+.cultura-eyebrow{display:inline-block;background:#fff;color:#C62828;border:2px dashed #F9A825;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:7px 18px;border-radius:30px;margin-bottom:14px;box-shadow:0 6px 18px rgba(229,57,53,.15);}
+.cultura-title{font-family:'Montserrat',sans-serif;font-size:clamp(38px,7vw,78px);font-weight:900;line-height:.95;text-transform:uppercase;letter-spacing:1px;background:linear-gradient(90deg,#C62828 0%,#E53935 25%,#FB8C00 50%,#D81B60 75%,#8E24AA 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:brillo 6s linear infinite;filter:drop-shadow(0 4px 0 rgba(249,168,37,.35));}
+@keyframes brillo{to{background-position:200% center;}}
+.cultura-sub{max-width:640px;margin:16px auto 0;font-size:15px;color:#6d4c41;line-height:1.75;}
+.cultura-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;max-width:960px;margin:0 auto;align-items:start;}
+.cultura-col{display:flex;flex-direction:column;gap:26px;}
+/* foto tipo polaroid */
+.polaroid{position:relative;background:#fff;padding:12px 12px 46px;border-radius:6px;box-shadow:0 18px 40px rgba(93,64,55,.25);cursor:zoom-in;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;border:none;display:block;width:100%;text-align:left;}
+.polaroid.t-l{transform:rotate(-4deg);}
+.polaroid.t-r{transform:rotate(4deg);}
+.polaroid:hover,.polaroid:focus-visible{transform:rotate(0) scale(1.05);box-shadow:0 26px 60px rgba(93,64,55,.35);z-index:3;}
+.polaroid img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:3px;}
+.polaroid figcaption{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:#5d4037;}
+.polaroid .zoom{position:absolute;top:22px;right:22px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;transition:opacity .3s;}
+.polaroid:hover .zoom{opacity:1;}
+.polaroid .tape{position:absolute;top:-12px;left:50%;width:90px;height:26px;margin-left:-45px;background:rgba(249,168,37,.55);transform:rotate(-3deg);box-shadow:0 2px 4px rgba(0,0,0,.08);}
+.polaroid.t-r .tape{background:rgba(0,172,193,.45);transform:rotate(4deg);}
+.cultura-card{background:#fff;border-radius:16px;padding:22px 22px;box-shadow:0 10px 30px rgba(93,64,55,.12);border-top:5px solid #E53935;}
+.cultura-card h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:900;color:#B71C1C;margin-bottom:8px;}
+.cultura-card p{font-size:13.5px;color:#5d4037;line-height:1.75;}
+.cultura-card.c2{border-top-color:#00ACC1;}
+.cultura-card.c2 h3{color:#00838F;}
+.cultura-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.cultura-chips span{background:#fff8e1;border:1px solid #ffe082;color:#6d4c41;border-radius:20px;padding:5px 12px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;}
+.yt-link{display:flex;width:fit-content;margin:16px auto 0;align-items:center;gap:8px;background:#FF0000;color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:9px 18px;border-radius:30px;box-shadow:0 6px 16px rgba(255,0,0,.25);transition:transform .25s;}
+.yt-link:hover{transform:translateY(-2px);}
+.cultura-lema{margin-top:44px;text-align:center;font-family:'Montserrat',sans-serif;font-size:clamp(17px,2.4vw,24px);font-weight:900;color:#B71C1C;}
+.cultura-lema span{color:#FB8C00;}
+/* visor de fotos */
+.lightbox{position:fixed;inset:0;z-index:2000;background:rgba(10,10,20,.92);display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;}
+.lightbox.open{display:flex;animation:aparecer .25s ease;}
+@keyframes aparecer{from{opacity:0;}to{opacity:1;}}
+.lightbox img{max-width:100%;max-height:85vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.lightbox p{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;}
+.lightbox button{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:none;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer;}
+@media(max-width:992px){
+  .cultura-sec{padding:80px 0 60px;}
+  .cultura-grid{gap:32px;}
+}
+@media(max-width:600px){
+  .cultura-grid{grid-template-columns:1fr;gap:30px;}
+  .cultura-col{gap:22px;}
+  .polaroid{max-width:340px;margin:0 auto;}
+  .cultura-sec::after{opacity:.35;}
+}
+@media(prefers-reduced-motion:reduce){
+  .cultura-sec::before,.cultura-title{animation:none;}
+}
+
+/* ═══════════════════ VIDEO DESTACADO: TAMBORA ═══════════════════ */
+.tambora-sec{position:relative;overflow:hidden;padding:80px 0 84px;color:#fff;background:radial-gradient(ellipse at 15% 0%,rgba(249,168,37,.22) 0%,transparent 55%),radial-gradient(ellipse at 100% 100%,rgba(191,54,12,.35) 0%,transparent 55%),linear-gradient(135deg,#061633 0%,#0D2A5C 55%,#3a1607 100%);}
+.tambora-sec::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 28px);pointer-events:none;}
+.tambora-sec::after{content:'♪ ♫ ♪';position:absolute;right:4%;top:28px;font-size:64px;letter-spacing:18px;color:rgba(249,168,37,.08);font-family:serif;pointer-events:none;}
+.tambora-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr 1fr;gap:52px;align-items:center;}
+.tambora-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(249,168,37,.15);border:1px solid rgba(249,168,37,.45);color:var(--dorado);font-family:'Montserrat',sans-serif;font-size:10.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;padding:6px 14px;border-radius:30px;margin-bottom:16px;}
+.tambora-eyebrow .live{width:8px;height:8px;border-radius:50%;background:var(--dorado);box-shadow:0 0 0 0 rgba(249,168,37,.7);animation:pulso 1.8s infinite;}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(249,168,37,.7);}70%{box-shadow:0 0 0 10px rgba(249,168,37,0);}100%{box-shadow:0 0 0 0 rgba(249,168,37,0);}}
+.tambora-title{font-family:'Montserrat',sans-serif;font-size:clamp(28px,4.2vw,48px);font-weight:900;line-height:1.05;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;}
+.tambora-title span{display:block;color:var(--dorado);}
+.tambora-proyecto{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;color:rgba(255,255,255,.75);font-style:italic;margin-bottom:22px;padding-left:14px;border-left:3px solid var(--dorado);line-height:1.6;}
+.tambora-text p{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.82);margin-bottom:14px;}
+.tambora-text strong{color:#fff;}
+.tambora-chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px;}
+.tambora-chips span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:6px 13px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;color:#fff;}
+.tambora-gracias{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(249,168,37,.3);border-radius:10px;padding:16px 18px;}
+.tambora-gracias .tg-ico{font-size:26px;flex-shrink:0;}
+.tambora-gracias p{font-size:12.5px;line-height:1.7;color:rgba(255,255,255,.78);margin:0;}
+.tambora-gracias strong{color:var(--dorado);}
+.video-frame{position:relative;border-radius:16px;padding:6px;background:linear-gradient(135deg,var(--dorado),#E64A19 50%,var(--azul-c));box-shadow:0 25px 60px rgba(0,0,0,.55),0 0 60px rgba(249,168,37,.18);}
+.video-frame .yt-box{position:relative;width:100%;aspect-ratio:16/9;background:#000 center/cover no-repeat;border-radius:11px;overflow:hidden;}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.video-play{position:absolute;inset:6px;border:none;border-radius:11px;cursor:pointer;background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.6) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#fff;font-family:'Montserrat',sans-serif;transition:background .3s;}
+.video-play .vp-btn{width:84px;height:84px;border-radius:50%;background:var(--dorado);color:var(--azul-o);display:flex;align-items:center;justify-content:center;font-size:30px;padding-left:6px;box-shadow:0 0 0 10px rgba(249,168,37,.25),0 10px 30px rgba(0,0,0,.4);transition:transform .3s;}
+.video-play:hover .vp-btn{transform:scale(1.1);}
+.video-play .vp-label{font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;text-shadow:0 2px 8px rgba(0,0,0,.6);}
+.video-frame.playing .video-play{display:none;}
+.tambora-lema{margin-top:22px;text-align:center;font-family:'Montserrat',sans-serif;font-size:clamp(14px,1.6vw,17px);font-weight:800;color:var(--dorado);line-height:1.5;}
+@media(max-width:992px){
+  .tambora-sec{padding:52px 0 56px;}
+  .tambora-grid{grid-template-columns:1fr;gap:32px;}
+  .tambora-sec::after{display:none;}
+  .video-play .vp-btn{width:64px;height:64px;font-size:24px;}
+}
+
+/* Documentos pendientes */
+.doc-item.doc-pend{cursor:default;opacity:.85;}
+.doc-item.doc-pend:hover{transform:none;border-left-color:var(--azul);background:#fff;}
+.doc-soon{display:inline-block;background:#fff4dc;color:#a86d00;border:1px solid #f3d38a;border-radius:10px;padding:1px 8px;font-size:9.5px;font-weight:800;letter-spacing:1px;}
+.docs-nota{margin-top:22px;text-align:center;font-size:13px;color:#667;}
+
+/* ═══════════════════ INFO STRIP ═══════════════════ */
+.info-strip{background:var(--azul-o);display:grid;grid-template-columns:repeat(4,1fr);border-bottom:3px solid var(--dorado);}
+.info-item{display:flex;align-items:center;gap:12px;padding:18px 22px;border-right:1px solid rgba(255,255,255,.1);transition:background .3s;}
+.info-item:last-child{border-right:none;}
+.info-item:hover{background:rgba(255,255,255,.07);}
+.info-link{text-decoration:none;cursor:pointer;}
+.info-link:hover{background:rgba(255,255,255,.14);}
+.info-link:hover .ii-val{color:var(--dorado);}
+.ii-icon{font-size:24px;flex-shrink:0;}
+.ii-label{font-size:9.5px;color:rgba(255,255,255,.55);font-family:'Montserrat',sans-serif;font-weight:700;letter-spacing:2px;text-transform:uppercase;}
+.ii-val{font-size:13px;color:#fff;font-weight:600;margin-top:1px;}
+
+/* ═══════════════════ INSTITUCIÓN INFO STRIP (clean homepage cards) ═══════════════════ */
+.inst-strip{background:linear-gradient(180deg,#fff 0%,#fafbfe 100%);padding:64px 0;border-bottom:1px solid #e8edf5;}
+.inst-strip .wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+.inst-intro{display:grid;grid-template-columns:330px 1fr;gap:56px;align-items:stretch;margin-bottom:48px;}
+.inst-logo-block{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#f4f8ff 0%,#eef3fc 100%);border:1px solid #e0e8f6;border-radius:18px;padding:38px 28px;box-shadow:0 10px 30px rgba(21,101,192,.08);position:relative;overflow:hidden;}
+.inst-logo-block::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--azul),var(--dorado));}
+.inst-logo-block img{width:140px;height:140px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(21,101,192,.28));margin-bottom:20px;}
+.inst-logo-block h1{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--azul-o);text-transform:uppercase;letter-spacing:1px;line-height:1.4;margin-bottom:14px;}
+.inst-logo-block .lema{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;color:var(--dorado);letter-spacing:2.5px;text-transform:uppercase;padding-top:12px;border-top:1px solid #dbe4f3;width:100%;}
+.inst-text{display:flex;flex-direction:column;justify-content:center;}
+.inst-text h2{font-family:'Montserrat',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:800;color:var(--azul-o);margin-bottom:8px;line-height:1.22;}
+.inst-text h2 + .inst-rule{width:64px;height:4px;background:linear-gradient(90deg,var(--azul),var(--dorado));border-radius:2px;margin-bottom:20px;}
+.inst-text p{font-size:14.5px;color:#54607a;line-height:1.85;margin-bottom:14px;}
+.inst-text p:last-of-type{margin-bottom:0;}
+.inst-text strong{color:var(--azul-o);font-weight:700;}
+.inst-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;padding-top:22px;border-top:1px dashed #d8e0f0;}
+.badge{display:inline-flex;align-items:center;gap:7px;background:#fff;border:1px solid #dde6f5;border-radius:24px;padding:7px 16px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;color:var(--azul-o);letter-spacing:.3px;box-shadow:0 2px 8px rgba(21,101,192,.06);transition:all .25s;}
+.badge:hover{border-color:var(--azul);box-shadow:0 5px 16px rgba(21,101,192,.16);transform:translateY(-2px);}
+/* Quick stats row */
+.qs-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.qs-box{background:#fff;border-radius:14px;padding:26px 16px;text-align:center;border:1px solid #e6ebf6;box-shadow:0 4px 16px rgba(21,101,192,.06);transition:all .3s;position:relative;overflow:hidden;}
+.qs-box::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--azul),var(--dorado));transform:scaleX(0);transition:transform .3s;transform-origin:left;}
+.qs-box:hover{border-color:var(--azul);transform:translateY(-4px);box-shadow:0 12px 28px rgba(21,101,192,.16);}
+.qs-box:hover::before{transform:scaleX(1);}
+.qs-num{font-family:'Montserrat',sans-serif;font-size:38px;font-weight:900;background:linear-gradient(135deg,var(--azul),var(--azul-o));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:7px;}
+.qs-label{font-size:11px;font-weight:700;color:#8590a8;letter-spacing:1.2px;text-transform:uppercase;font-family:'Montserrat',sans-serif;}
+
+/* ═══════════════════ SUB-NAV CONÓCENOS (pestañas internas) ═══════════════════ */
+.subnav{background:#fff;border-bottom:1px solid #e6ebf6;box-shadow:0 2px 12px rgba(21,101,192,.06);}
+.subnav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+.subnav a{display:inline-flex;align-items:center;gap:7px;padding:16px 18px;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;color:#5a6a85;text-decoration:none;border-bottom:3px solid transparent;transition:all .25s;letter-spacing:.3px;white-space:nowrap;}
+.subnav a:hover{color:var(--azul);background:#f4f8ff;}
+.subnav a.sub-active{color:var(--azul-o);border-bottom-color:var(--dorado);}
+.subnav a .sn-ico{font-size:15px;}
+@media(max-width:992px){
+  .subnav-inner{justify-content:flex-start;overflow-x:auto;padding:0 14px;-webkit-overflow-scrolling:touch;}
+  .subnav a{padding:14px 13px;font-size:11.5px;}
+}
+
+/* ═══════════════════ ENLACES (Homepage version - clean) ═══════════════════ */
+.enlaces-home{background:var(--gris);padding:60px 0;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+.sec-head{text-align:center;margin-bottom:44px;}
+.s-tag{display:inline-block;background:var(--azul);color:#fff;font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:800;letter-spacing:3px;padding:4px 14px;text-transform:uppercase;margin-bottom:12px;border-radius:2px;}
+.s-title{font-family:'Montserrat',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:800;color:var(--azul-o);margin-bottom:10px;}
+.s-tag.g{background:var(--dorado);color:var(--azul-o);}
+.s-tag.gr{background:var(--verde);}
+.s-line{width:52px;height:4px;background:linear-gradient(90deg,var(--azul),var(--dorado));margin:0 auto;border-radius:2px;}
+/* Two columns of logos */
+.enlac-block{background:#fff;border-radius:10px;padding:32px 36px;box-shadow:0 4px 20px rgba(21,101,192,.07);margin-bottom:24px;}
+.enlac-block:last-child{margin-bottom:0;}
+.enlac-tit{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:var(--azul-o);text-transform:uppercase;letter-spacing:2px;margin-bottom:22px;padding-bottom:10px;border-bottom:2px solid var(--azul);display:flex;align-items:center;gap:8px;}
+.logos-g{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;align-items:stretch;}
+.logo-link{display:flex;align-items:center;justify-content:center;background:#fff;border:1.5px solid #dde2f0;border-radius:10px;padding:18px 20px;height:96px;text-decoration:none;transition:all .3s;box-shadow:0 2px 8px rgba(21,101,192,.05);}
+.logo-link:hover{border-color:var(--azul);box-shadow:0 8px 24px rgba(21,101,192,.16);transform:translateY(-4px);}
+.logo-link img{max-width:100%;max-height:60px;width:auto;height:auto;object-fit:contain;display:block;}
+.logo-txt{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;text-align:center;line-height:1.3;}
+
+/* SECTIONS (rest of page) */
+.sec{padding:76px 0;}
+.sec.bg-w{background:#fff;}
+.sec.bg-g{background:var(--gris);}
+.sec.bg-b{background:linear-gradient(135deg,var(--azul-o) 0%,var(--azul-c) 100%);}
+.sh{text-align:center;margin-bottom:52px;}
+.s-sub{font-size:14px;color:#666;line-height:1.7;max-width:640px;margin:12px auto 0;}
+.s-title.w{color:#fff;}
+
+/* GRID + CARD REUSE from v3 */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.card{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 20px rgba(21,101,192,.08);transition:all .35s;}
+.card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(21,101,192,.16);}
+.card-top{padding:32px;text-align:center;font-size:44px;}
+.card-top.az{background:linear-gradient(135deg,var(--azul-o),var(--azul-c));}
+.card-top.vd{background:linear-gradient(135deg,#1B5E20,#2E7D32);}
+.card-top.pr{background:linear-gradient(135deg,#4A148C,#7B1FA2);}
+.card-top.or{background:linear-gradient(135deg,#BF360C,#E64A19);}
+.card-body{padding:22px 20px;}
+.card-label{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;letter-spacing:3px;color:var(--azul);text-transform:uppercase;margin-bottom:6px;}
+.card-body h3{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;color:var(--texto);margin-bottom:8px;line-height:1.3;}
+.card-body p{font-size:13.5px;color:#555;line-height:1.7;}
+.hist-box{background:#fff;border-radius:8px;padding:32px 36px;box-shadow:0 4px 24px rgba(21,101,192,.08);border-left:5px solid var(--azul);}
+.hist-box p{font-size:14px;color:#444;line-height:1.9;margin-bottom:14px;}
+.hist-box p:last-child{margin-bottom:0;}
+.timeline{position:relative;padding-left:30px;}
+.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--azul),var(--dorado));}
+.tl-item{position:relative;margin-bottom:26px;}
+.tl-item::before{content:'';position:absolute;left:-20px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--dorado);border:2px solid var(--azul);}
+.tl-year{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;color:var(--azul);letter-spacing:2px;margin-bottom:3px;}
+.tl-text{font-size:13.5px;color:#444;line-height:1.7;}
+.nivel-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(21,101,192,.09);transition:all .35s;}
+.nivel-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(21,101,192,.18);}
+.nivel-h{padding:26px 22px 20px;color:#fff;}
+.nc1 .nivel-h{background:linear-gradient(135deg,#0D47A1,#1565C0);}
+.nc2 .nivel-h{background:linear-gradient(135deg,#1B5E20,#2E7D32);}
+.nc3 .nivel-h{background:linear-gradient(135deg,#4A148C,#7B1FA2);}
+.nc4 .nivel-h{background:linear-gradient(135deg,#BF360C,#E64A19);}
+.nivel-em{font-size:32px;margin-bottom:8px;display:block;}
+.nivel-gr{font-family:'Montserrat',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:3px;opacity:.75;text-transform:uppercase;margin-bottom:4px;}
+.nivel-h h3{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;}
+.nivel-b{padding:20px 22px 24px;}
+.nivel-b ul{list-style:none;}
+.nivel-b ul li{padding:7px 0;border-bottom:1px solid #f0f2f8;font-size:13px;color:#444;display:flex;align-items:center;gap:7px;}
+.nivel-b ul li::before{content:'▸';color:var(--azul);font-size:11px;}
+.nivel-b ul li:last-child{border-bottom:none;}
+.nivel-horario{margin-top:10px;padding:9px 12px;background:var(--gris);border-radius:4px;font-size:11.5px;color:var(--azul);font-weight:600;font-family:'Montserrat',sans-serif;}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;text-align:center;}
+.stat-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:30px 14px;transition:all .3s;}
+.stat-box:hover{background:rgba(255,255,255,.16);transform:translateY(-4px);}
+.stat-num{font-family:'Montserrat',sans-serif;font-size:44px;font-weight:900;color:var(--dorado);line-height:1;margin-bottom:5px;}
+.stat-label{font-size:11px;color:rgba(255,255,255,.7);font-family:'Montserrat',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.val-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.val-card{background:rgba(255,255,255,.06);border:1px solid rgba(200,168,75,.2);border-radius:6px;padding:26px 20px;transition:all .35s;overflow:hidden;}
+.val-card:hover{background:rgba(200,168,75,.08);border-color:var(--dorado);transform:translateY(-4px);}
+.val-n{font-family:'Montserrat',sans-serif;font-size:40px;font-weight:900;color:rgba(200,168,75,.12);line-height:1;margin-bottom:5px;}
+.val-icon{font-size:26px;margin-bottom:10px;}
+.val-card h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--dorado);margin-bottom:7px;}
+.val-card p{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.7;}
+.prin-g{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+.prin-item{background:#fff;border:1px solid #e0e4ef;border-left:4px solid var(--azul);border-radius:0 6px 6px 0;padding:14px 18px;display:flex;gap:10px;align-items:flex-start;transition:all .3s;box-shadow:0 2px 8px rgba(21,101,192,.05);}
+.prin-item:hover{border-left-color:var(--dorado);transform:translateX(4px);}
+.prin-num{width:26px;height:26px;background:var(--azul);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;flex-shrink:0;margin-top:1px;}
+.prin-text h4{font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;color:var(--azul-o);margin-bottom:3px;}
+.prin-text p{font-size:12px;color:#555;line-height:1.6;}
+.gov-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.gov-card{background:#fff;border-radius:8px;box-shadow:0 4px 20px rgba(21,101,192,.08);overflow:hidden;transition:all .35s;}
+.gov-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(21,101,192,.15);}
+.gov-top{background:linear-gradient(135deg,var(--azul-o),var(--azul-c));padding:22px;text-align:center;color:#fff;}
+.gov-top .gov-icon{font-size:34px;margin-bottom:7px;display:block;}
+.gov-top h4{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;}
+.gov-body{padding:16px 18px;}
+.gov-body p{font-size:12.5px;color:#555;line-height:1.7;}
+.proy-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.proy-card{background:#fff;border-radius:6px;box-shadow:0 4px 16px rgba(21,101,192,.07);padding:22px;transition:all .35s;border-top:4px solid var(--azul);}
+.proy-card:nth-child(2){border-top-color:var(--verde);}
+.proy-card:nth-child(3){border-top-color:#F9A825;}
+.proy-card:nth-child(4){border-top-color:#7B1FA2;}
+.proy-card:nth-child(5){border-top-color:#E64A19;}
+.proy-card:nth-child(6){border-top-color:#00838F;}
+.proy-card:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(21,101,192,.13);}
+.proy-icon{font-size:30px;margin-bottom:10px;}
+.proy-card h4{font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:700;color:var(--azul-o);margin-bottom:7px;line-height:1.3;}
+.proy-card p{font-size:12.5px;color:#666;line-height:1.7;}
+.mod-g{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start;}
+.mod-list{list-style:none;margin-top:14px;}
+.mod-list li{display:flex;align-items:flex-start;gap:9px;margin-bottom:9px;font-size:13.5px;color:#444;}
+.mod-list li::before{content:'✔';color:var(--azul);font-size:11px;margin-top:3px;flex-shrink:0;}
+.crese-box{background:linear-gradient(135deg,#e8f0fe,#bbdefb);border-radius:10px;padding:26px;margin-top:18px;}
+.crese-box h4{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--azul-o);margin-bottom:10px;}
+.crese-item{display:flex;align-items:center;gap:7px;margin-bottom:7px;font-size:12.5px;color:#333;}
+.crese-item::before{content:'●';color:var(--azul);font-size:8px;}
+.sedes-table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 4px 20px rgba(21,101,192,.08);}
+.sedes-table th{background:var(--azul-o);color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:13px 15px;text-align:left;}
+.sedes-table td{padding:10px 15px;font-size:12.5px;border-bottom:1px solid #f0f2f8;color:#444;}
+.sedes-table tr:last-child td{border-bottom:none;}
+.sedes-table tr:nth-child(even){background:#f8f9fc;}
+.sedes-table tr:hover td{background:#e8f0fe;}
+.sede-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;}
+.sb-u{background:#e8f0fe;color:var(--azul);}
+.sb-m{background:#e8f5e9;color:var(--verde);}
+.docs-g{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.doc-item{background:#fff;border:1px solid #e0e4ef;border-left:4px solid var(--azul);border-radius:0 6px 6px 0;padding:16px 18px;display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--texto);transition:all .3s;box-shadow:0 2px 8px rgba(21,101,192,.05);}
+.doc-item:hover{border-left-color:var(--dorado);background:var(--gris);transform:translateX(4px);}
+.doc-icon{width:38px;height:38px;background:linear-gradient(135deg,#e8f0fe,#bbdefb);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.doc-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;color:var(--azul-o);margin-bottom:2px;}
+.doc-type{font-size:10px;color:#888;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.conv-g{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.conv-card{background:#fff;border-radius:6px;box-shadow:0 4px 16px rgba(21,101,192,.07);padding:20px;display:flex;gap:13px;align-items:flex-start;border-left:4px solid var(--verde);}
+.conv-icon{font-size:26px;flex-shrink:0;}
+.conv-text h4{font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:700;color:var(--azul-o);margin-bottom:5px;}
+.conv-text p{font-size:12.5px;color:#666;line-height:1.7;}
+.ct-g{display:grid;grid-template-columns:1fr 1.4fr;gap:52px;align-items:start;}
+.ct-info h3{font-family:'Montserrat',sans-serif;font-size:19px;font-weight:800;color:#fff;margin-bottom:26px;}
+.ct-item{display:flex;gap:11px;margin-bottom:20px;align-items:flex-start;}
+.ct-icon{width:38px;height:38px;background:rgba(249,168,37,.18);border:1px solid rgba(249,168,37,.35);border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.ct-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--dorado);text-transform:uppercase;margin-bottom:2px;}
+.ct-val{font-size:13px;color:rgba(255,255,255,.8);line-height:1.5;}
+.ct-form{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:32px;}
+.ct-form h3{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;color:#fff;margin-bottom:22px;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:11px;}
+.fg{margin-bottom:13px;}
+.fg label{display:block;font-size:9px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.45);text-transform:uppercase;margin-bottom:5px;}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);color:#fff;padding:10px 12px;font-family:'Open Sans',sans-serif;font-size:13px;border-radius:3px;outline:none;transition:border-color .3s;}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--dorado);}
+.fg select option{background:#0D47A1;color:#fff;}
+.fg textarea{resize:none;height:85px;}
+.btn-send{width:100%;padding:12px;background:var(--dorado);color:var(--azul-o);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;transition:all .3s;margin-top:4px;}
+.btn-send:hover{background:#fbc02d;transform:translateY(-2px);box-shadow:0 6px 20px rgba(249,168,37,.35);}
+.btn-wa{display:block;text-align:center;text-decoration:none;width:100%;padding:12px;margin-top:10px;background:#25D366;color:#fff;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;transition:all .3s;}
+.btn-wa:hover{background:#1ebe5a;transform:translateY(-2px);}
+.form-msg{display:none;margin-top:12px;padding:10px 12px;border-radius:4px;font-size:12.5px;line-height:1.5;}
+.form-msg.err{display:block;background:rgba(229,57,53,.18);border:1px solid rgba(229,57,53,.5);color:#ffd6d6;}
+.form-msg.ok{display:block;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.45);color:#d5ffe4;}
+.form-nota{margin-top:10px;font-size:11px;color:rgba(255,255,255,.5);line-height:1.5;}
+.himno-box{background:linear-gradient(135deg,var(--azul-o),var(--azul-c));border-radius:10px;padding:36px;color:#fff;position:relative;overflow:hidden;}
+.himno-box::before{content:'♪';position:absolute;right:28px;top:18px;font-size:110px;opacity:.06;font-family:serif;}
+.himno-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
+.himno-estrofa{margin-bottom:18px;}
+.est-num{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;letter-spacing:3px;color:var(--dorado);text-transform:uppercase;margin-bottom:7px;}
+.himno-estrofa p{font-size:13.5px;line-height:2;color:rgba(255,255,255,.9);font-style:italic;}
+.himno-coro{background:rgba(249,168,37,.15);border:1px solid rgba(249,168,37,.3);border-radius:6px;padding:14px 18px;margin-bottom:18px;}
+.himno-letra{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:rgba(255,255,255,.45);margin-top:10px;}
+.bandera-box{background:#fff;border-radius:8px;padding:28px;box-shadow:0 4px 20px rgba(21,101,192,.08);display:flex;gap:28px;align-items:center;}
+.bandera-img{flex-shrink:0;width:130px;height:100px;display:flex;flex-direction:column;border-radius:4px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.bf1,.bf2,.bf3{width:100%;}
+.bf1{height:30%;background:#1565C0;}
+.bf2{height:40%;background:#fff;display:flex;align-items:center;justify-content:center;}
+.bf3{height:30%;background:#1565C0;}
+.bandera-text h4{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--azul-o);margin-bottom:8px;}
+.bandera-text p{font-size:13px;color:#555;line-height:1.8;}
+.redes-g{display:flex;gap:12px;margin-top:12px;}
+.red-btn{display:flex;align-items:center;gap:7px;padding:8px 15px;border-radius:4px;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;transition:all .3s;}
+.red-fb{background:#1877F2;color:#fff;}
+.red-ig{background:linear-gradient(135deg,#833AB4,#FD1D1D,#F77737);color:#fff;}
+.red-btn:hover{transform:translateY(-2px);opacity:.9;}
+footer{background:#060f1d;border-top:3px solid var(--dorado);}
+.ft{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;padding:44px 40px 32px;max-width:1200px;margin:0 auto;}
+.fb img{width:60px;margin-bottom:12px;}
+.fb h3{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;color:rgba(255,255,255,.9);text-transform:uppercase;letter-spacing:1px;margin-bottom:7px;}
+.fb p{font-size:11.5px;color:rgba(255,255,255,.38);line-height:1.8;}
+.fc h4{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:var(--dorado);letter-spacing:3px;text-transform:uppercase;margin-bottom:13px;padding-bottom:6px;border-bottom:1px solid rgba(249,168,37,.2);}
+.fc ul{list-style:none;}
+.fc ul li{margin-bottom:7px;}
+.fc ul li a{color:rgba(255,255,255,.4);text-decoration:none;font-size:12px;transition:color .2s;display:flex;align-items:center;gap:5px;}
+.fc ul li a::before{content:'›';color:var(--dorado);font-size:13px;}
+.fc ul li a:hover{color:rgba(255,255,255,.85);}
+.fb-bot{border-top:1px solid rgba(255,255,255,.07);padding:16px 40px;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+.fb-bot p{font-size:11px;color:rgba(255,255,255,.26);}
+.fb-lema{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:800;color:var(--dorado);letter-spacing:3px;text-transform:uppercase;}
+.btop{position:fixed;bottom:24px;right:24px;width:42px;height:42px;background:var(--azul);color:#fff;border:none;border-radius:50%;font-size:17px;cursor:pointer;box-shadow:0 4px 16px rgba(21,101,192,.35);transition:all .3s;z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;}
+.btop.v{opacity:1;pointer-events:all;}
+.btop:hover{background:var(--dorado);transform:translateY(-3px);}
+
+/* ═══════════════════ RESPONSIVE ═══════════════════
+   ≤1200 portátil · ≤992 tablet (menú hamburguesa) · ≤600 teléfono · ≤380 teléfono pequeño */
+.nav-ham-top{display:none;}
+img,video{max-width:100%;}
+
+/* Portátil */
+@media(max-width:1200px){
+  .topbar{padding:7px 20px;}
+  .header-main{padding:10px 20px;}
+  .nav-list{padding:0 12px;justify-content:center;}
+  .nav-list>li>a{padding:0 12px;font-size:11px;letter-spacing:.5px;}
+  .ft{padding:40px 24px 28px;}
+  .fb-bot{padding:16px 24px;}
+}
+
+/* Tablet */
+@media(max-width:992px){
+  .topbar{display:none;}
+  .header-main{padding:8px 16px;gap:12px;}
+  .brand{gap:10px;min-width:0;flex:1;}
+  .brand-escudo{width:50px;height:50px;flex-shrink:0;}
+  .brand-nombre{font-size:13px;}
+  .brand-dane{display:none;}
+  .btn-web{display:none;}
+  .btn-mat{padding:8px 14px;font-size:10px;}
+  nav.main-nav{display:none;}
+  .nav-ham-top{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:46px;height:46px;border:none;border-radius:8px;background:var(--azul);color:#fff;font-size:22px;cursor:pointer;}
+  .nav-ham-top[aria-expanded="true"]{background:var(--azul-o);}
+  .nav-mobile.open{display:block;max-height:calc(100vh - 70px);overflow-y:auto;}
+
+  .carousel{height:auto;aspect-ratio:2/1;}
+  .cbtn{width:42px;height:42px;font-size:16px;}
+  .cprev{left:10px;}.cnext{right:10px;}
+
+  .sec{padding:56px 0;}
+  .sh{margin-bottom:36px;}
+  .wrap,.inst-strip .wrap{padding:0 20px;}
+  .news-sec{padding:48px 0;}
+  .inst-strip{padding:48px 0;}
+  .enlaces-home{padding:48px 0;}
+
+  .info-strip{grid-template-columns:repeat(2,1fr);}
+  .info-item:nth-child(2){border-right:none;}
+  .info-item:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.1);}
+  .inst-intro{grid-template-columns:1fr;gap:28px;margin-bottom:32px;}
+  .inst-logo-block{padding:28px 24px;}
+  .inst-logo-block img{width:110px;height:110px;}
+  .qs-row{grid-template-columns:repeat(2,1fr);gap:14px;}
+
+  .news-grid,.g3,.g4,.val-g,.prin-g,.gov-g,.proy-g,.docs-g,.conv-g,.stats-g{grid-template-columns:repeat(2,1fr);}
+  .g2,.ct-g,.mod-g,.himno-cols{grid-template-columns:1fr;gap:32px;}
+  .mini-cards{grid-template-columns:repeat(2,1fr);}
+  .logos-g{grid-template-columns:repeat(3,1fr);gap:12px;}
+  .logo-link{height:84px;padding:14px;}
+  .enlac-block{padding:24px 20px;}
+
+  .ft{grid-template-columns:1fr 1fr;gap:28px;padding:36px 20px 24px;}
+  .fb{grid-column:1 / -1;}
+  .fb-bot{flex-direction:column;gap:6px;text-align:center;padding:14px 20px;}
+  .btop{bottom:16px;right:16px;}
+
+  /* Evita el zoom automático de iOS al escribir */
+  .fg input,.fg select,.fg textarea{font-size:16px;}
+}
+
+/* Teléfono */
+@media(max-width:600px){
+  .header-right{display:none;}
+  .brand-nombre{font-size:12px;letter-spacing:.2px;}
+  .brand-sub{font-size:9px;letter-spacing:1px;}
+  .brand-escudo{width:44px;height:44px;}
+
+  .slide-counter{display:none;}
+  .cbtn{width:36px;height:36px;font-size:14px;background:rgba(0,0,0,.3);}
+  .cdots{bottom:8px;}
+
+  .sec{padding:44px 0;}
+  .wrap,.inst-strip .wrap{padding:0 16px;}
+  .s-sub{font-size:13.5px;}
+
+  .news-grid,.g3,.g4,.val-g,.prin-g,.gov-g,.proy-g,.docs-g,.conv-g,.frow{grid-template-columns:1fr;}
+  .mini-cards{grid-template-columns:1fr;}
+  .news-thumb{height:200px;}
+  .info-strip{grid-template-columns:1fr;}
+  .info-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.1);padding:14px 18px;}
+  .info-item:last-child{border-bottom:none;}
+  .qs-num{font-size:30px;}
+  .qs-box{padding:20px 10px;}
+  .logos-g{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .logo-link{height:76px;padding:12px;}
+  .logo-link img{max-height:48px;}
+  .enlac-block{padding:20px 16px;}
+
+  .hist-box{padding:24px 20px;}
+  .timeline{padding-left:26px;}
+  .bandera-box{flex-direction:column;text-align:center;padding:24px 20px;}
+  .lema-box{padding:24px 18px !important;}
+  .himno-box{padding:28px 20px;}
+  .himno-box::before{font-size:70px;}
+  .ct-form{padding:22px 18px;}
+  .redes-g{flex-wrap:wrap;}
+  .info-card{padding:24px 20px !important;}
+
+  /* Tabla de sedes como tarjetas */
+  .sedes-table,.sedes-table tbody,.sedes-table tr,.sedes-table td{display:block;width:100%;}
+  .sedes-table{background:none;box-shadow:none;}
+  .sedes-table thead{display:none;}
+  .sedes-table tr{background:#fff !important;border-radius:10px;box-shadow:0 3px 14px rgba(21,101,192,.09);margin-bottom:12px;padding:12px 16px;border-left:4px solid var(--azul);}
+  .sedes-table td{border:none;padding:5px 0;font-size:13px;display:flex;justify-content:space-between;gap:12px;text-align:right;}
+  .sedes-table td::before{content:attr(data-label);font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--azul);text-align:left;flex-shrink:0;}
+  .sedes-table td:first-child{font-size:14.5px;font-weight:700;color:var(--azul-o);justify-content:flex-start;text-align:left;padding-bottom:8px;border-bottom:1px solid #eef1f8;margin-bottom:4px;}
+  .sedes-table td:first-child::before{display:none;}
+  .sedes-table tr:hover td{background:none;}
+
+  .ft{grid-template-columns:1fr;gap:22px;padding:32px 16px 20px;}
+  .fb{text-align:center;}
+  .fb img{margin:0 auto 12px;display:block;}
+}
+
+/* Teléfono pequeño */
+@media(max-width:380px){
+  .brand-sub{display:none;}
+  .qs-row{grid-template-columns:1fr 1fr;gap:10px;}
+  .qs-label{font-size:9.5px;letter-spacing:.6px;}
+  .logos-g{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span>📧 <span data-dato="correo">iecoyongal@yahoo.com</span> &nbsp;|&nbsp; 📞 <span data-dato="telefono">310-615-2695</span> &nbsp;|&nbsp; 🏛️ NIT: <span data-dato="nit">800181494-2</span> &nbsp;|&nbsp; DANE: <span data-dato="dane">213430002337</span></span>
+  <div class="topbar-right">
+    <a href="#" onclick="return goPage('contacto')">Contacto</a>
+    <a href="#" onclick="return goPage('documentos')">Documentos</a>
+    <a href="https://sites.google.com/view/instec2/inicio" target="_blank">Google Sites</a>
+    <a href="https://www.mineducacion.gov.co" target="_blank">MEN</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="header-main">
+    <a href="#" onclick="return goPage('inicio')" class="brand">
+      <img src="imagenes/escudo.png" alt="Escudo INSTEC" class="brand-escudo">
+      <div>
+        <div class="brand-nombre">Institución Educativa de Coyongal – INSTEC</div>
+        <div class="brand-sub">Magangué, Bolívar · Colombia</div>
+        <div class="brand-dane">Res. N° 4534 / 2 nov. 2023 – Sec. de Educación Municipal de Magangué</div>
+      </div>
+    </a>
+    <div class="header-right">
+      <a href="https://www.facebook.com/admi.instec" data-enlace="facebook" target="_blank" class="btn-web">📘 Facebook</a>
+      <a href="#" onclick="return goPage('contacto')" class="btn-mat">📋 <span data-dato="matriculas">Matrículas 2026</span></a>
+    </div>
+    <button class="nav-ham-top" id="navHam" onclick="toggleMenu()" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMob">☰</button>
+  </div>
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="#" onclick="return goPage('inicio')">Inicio</a></li>
+      <li>
+        <a href="#" onclick="return goPage('conocenos')">Conócenos <span class="arrow">▼</span></a>
+        <ul class="dropdown">
+          <li><a href="#" onclick="return goPage('historia')">Reseña Histórica</a></li>
+          <li><a href="#" onclick="return goPage('conocenos','mision')">Misión y Visión</a></li>
+          <li><a href="#" onclick="return goPage('principios')">Principios Institucionales</a></li>
+          <li><a href="#" onclick="return goPage('valores')">Valores Institucionales</a></li>
+          <li><a href="#" onclick="return goPage('simbolos')">Símbolos Institucionales</a></li>
+          <li><a href="#" onclick="return goPage('gobierno')">Gobierno Escolar</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" onclick="return goPage('egresados')">Egresados <span class="arrow">▼</span></a>
+        <ul class="dropdown">
+          <li><a href="#" onclick="return goPage('egresados','egresados')">Perfil del Egresado</a></li>
+          <li><a href="#" onclick="return goPage('egresados','convenios')">Convenios Universitarios</a></li>
+          <li><a href="#" onclick="return goPage('contacto')">Certificados y Documentos</a></li>
+          <li><a href="#" onclick="return goPage('contacto')">Directorio de Egresados</a></li>
+        </ul>
+      </li>
+      <li><a href="#" onclick="return goPage('sedes')">Sedes</a></li>
+      <li>
+        <a href="#" onclick="return goPage('documentos')">Documentos Institucionales <span class="arrow">▼</span></a>
+        <ul class="dropdown">
+          <li><a href="#" onclick="return goPage('documentos')">Proyecto Educativo (PEI)</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Manual de Convivencia</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Plan de Estudios</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Calendario Académico</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Plan de Mejoramiento</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Sistema de Evaluación (SIEE)</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Actas de Gobierno Escolar</a></li>
+          <li><a href="#" onclick="return goPage('documentos')">Tabla de Costos 2026</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" onclick="return goPage('modelo')">Modelo Pedagógico <span class="arrow">▼</span></a>
+        <ul class="dropdown">
+          <li><a href="#" onclick="return goPage('modelo','modelo')">Enfoque Pedagógico</a></li>
+          <li><a href="#" onclick="return goPage('modelo','modelo')">Modelo Constructivista CRESE</a></li>
+          <li><a href="#" onclick="return goPage('modelo','proyectos')">Proyectos Pedagógicos</a></li>
+          <li><a href="#" onclick="return goPage('modelo','modelo')">Evaluación y Promoción (SIEE)</a></li>
+          <li><a href="#" onclick="return goPage('modelo','modelo')">Innovación y TIC</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="nav-mobile" id="navMob">
+    <a href="#" onclick="return goPage('inicio')">🏠 Inicio</a>
+    <details>
+      <summary>🏛️ Conócenos</summary>
+      <a href="#" onclick="return goPage('conocenos')">Identidad Institucional</a>
+      <a href="#" onclick="return goPage('conocenos','mision')">Misión y Visión</a>
+      <a href="#" onclick="return goPage('historia')">Reseña Histórica</a>
+      <a href="#" onclick="return goPage('principios')">Principios Institucionales</a>
+      <a href="#" onclick="return goPage('valores')">Valores Institucionales</a>
+      <a href="#" onclick="return goPage('simbolos')">Símbolos Institucionales</a>
+      <a href="#" onclick="return goPage('gobierno')">Gobierno Escolar</a>
+    </details>
+    <details>
+      <summary>🎓 Egresados</summary>
+      <a href="#" onclick="return goPage('egresados','egresados')">Perfil del Egresado</a>
+      <a href="#" onclick="return goPage('egresados','convenios')">Convenios</a>
+    </details>
+    <a href="#" onclick="return goPage('sedes')">📍 Sedes</a>
+    <a href="#" onclick="return goPage('documentos')">📂 Documentos Institucionales</a>
+    <details>
+      <summary>🔬 Modelo Pedagógico</summary>
+      <a href="#" onclick="return goPage('modelo','modelo')">Enfoque y Modelo CRESE</a>
+      <a href="#" onclick="return goPage('modelo','proyectos')">Proyectos Pedagógicos</a>
+    </details>
+    <a href="#" onclick="return goPage('inicio','semana-cultural')">🎉 Semana Cultural</a>
+    <a href="#" onclick="return goPage('inicio','tambora')">🥁 Talleres de Tambora</a>
+    <a href="#" onclick="return goPage('contacto')">✉️ Contacto</a>
+    <div class="nm-btns">
+      <a href="#" onclick="return goPage('contacto')" class="nm-mat">📋 <span data-dato="matriculas">Matrículas 2026</span></a>
+      <a href="https://www.facebook.com/admi.instec" data-enlace="facebook" target="_blank" rel="noopener" class="nm-fb">📘 Facebook</a>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════ INICIO ═══════════════════ -->
+<section id="inicio" data-page="inicio">
+
+<!-- CARRUSEL CON FOTOS REALES -->
+<div class="hero">
+  <div class="carousel" id="carousel">
+      <div class="c-slide active"><img class="slide-photo" src="imagenes/carrusel-1-semana-cultural.jpg" alt="Semana Cultural INSTEC"></div>
+    <button class="cbtn cprev" onclick="moveC(-1)" aria-label="Foto anterior">&#8592;</button>
+    <button class="cbtn cnext" onclick="moveC(1)" aria-label="Foto siguiente">&#8594;</button>
+    <div class="cdots" id="cdots"></div>
+    <div class="slide-counter" id="slideCounter"></div>
+  </div>
+</div>
+
+<!-- NOTICIAS / ACTIVIDADES / EVENTOS -->
+<section class="news-sec" id="noticias">
+  <div class="wrap">
+    <div class="sec-head">
+      <span style="display:inline-block;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--dorado);margin-bottom:6px;">Comunidad INSTEC</span>
+      <h2 class="s-title">Noticias, Actividades y Eventos</h2>
+      <p class="s-sub">Conoce las actividades, proyectos y eventos más recientes de nuestra comunidad educativa.</p>
+    </div>
+    <div class="news-grid" id="noticiasGrid"></div>
+  </div>
+</section>
+
+<!-- SEMANA CULTURAL -->
+<section class="cultura-sec" id="semana-cultural">
+  <div class="wrap">
+    <div class="cultura-head">
+      <span class="cultura-eyebrow">🎉 ¡La fiesta de nuestras raíces! 🎉</span>
+      <h2 class="cultura-title">Semana Cultural</h2>
+      <p class="cultura-sub" id="culturaSub"></p>
+    </div>
+    <div class="cultura-grid" id="culturaGrid"></div>
+    <p class="cultura-lema">¡Orgullosos de nuestra cultura, <span>orgullosos de ser INSTEC!</span></p>
+  </div>
+</section>
+
+<!-- VIDEO DESTACADO: TALLERES DE MÚSICA DE TAMBORA -->
+<section class="tambora-sec" id="tambora">
+  <div class="wrap">
+    <div class="tambora-grid">
+      <div>
+        <div class="video-frame" id="tamboraFrame">
+          <div class="yt-box" id="tamboraVideo" data-yt="VLiz7X9byg8" data-title="Talleres de Música de Tambora – INSTEC" style="background-image:url('https://i.ytimg.com/vi/VLiz7X9byg8/maxresdefault.jpg');"></div>
+          <button class="video-play" id="tamboraPlay" aria-label="Reproducir video de los Talleres de Música de Tambora">
+            <span class="vp-btn">▶</span>
+            <span class="vp-label">Ver el video</span>
+          </button>
+        </div>
+        <a class="yt-link" href="https://youtu.be/VLiz7X9byg8" target="_blank" rel="noopener">▶ Ver en YouTube</a>
+        <p class="tambora-lema">¡Que suene la tambora, que viva Coyongal y que nuestras tradiciones sigan pasando de generación en generación! 🥁</p>
+      </div>
+      <div class="tambora-text">
+        <span class="tambora-eyebrow"><span class="live"></span>Cultura viva INSTEC</span>
+        <h2 class="tambora-title">Talleres de Música <span>de Tambora</span></h2>
+        <p class="tambora-proyecto">Proyecto «Semillero de Tradiciones Orales y Musicales de la Depresión Momposina»</p>
+        <p>La <strong>Institución Educativa de Coyongal</strong>, con el apoyo del <strong>Ministerio de las Culturas, las Artes y los Saberes</strong>, desarrolla los Talleres de Música de Tambora.</p>
+        <p>Esta iniciativa promueve la formación artística, el intercambio de saberes entre generaciones y la preservación de las expresiones musicales tradicionales que hacen parte de la identidad cultural de nuestra región.</p>
+        <div class="tambora-chips">
+          <span>🥁 Formación artística</span>
+          <span>👵🏽👦🏽 Saberes entre generaciones</span>
+          <span>🌊 Depresión Momposina</span>
+        </div>
+        <div class="tambora-gracias">
+          <span class="tg-ico">🙏</span>
+          <p>Agradecemos al <strong>Ministerio de las Culturas, las Artes y los Saberes</strong> por apoyar este proceso de formación y contribuir al fortalecimiento de las tradiciones culturales de la Depresión Momposina.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFO STRIP -->
+<div class="info-strip">
+  <div class="info-item"><span class="ii-icon">👤</span><div><div class="ii-label">Rector</div><div class="ii-val"><span data-dato="rector">Robin Jhair Piñeres Retamoza</span></div></div></div>
+  <a href="https://www.google.com/maps/place/Coyongal,+Magangu%C3%A9,+Bol%C3%ADvar,+Colombia/@8.9221015,-74.49207,16z/data=!3m1!4b1!4m6!3m5!1s0x8e5e9e9d54bde3b7:0xa496bacc24df1fc6!8m2!3d8.920237!4d-74.4909152!16s%2Fg%2F1hhwmnxwt" target="_blank" rel="noopener" class="info-item info-link" title="Ver ubicación de Coyongal en Google Maps"><span class="ii-icon">📍</span><div><div class="ii-label">Ubicación</div><div class="ii-val">Coyongal, Magangué – Bolívar</div></div></a>
+  <div class="info-item"><span class="ii-icon">🏫</span><div><div class="ii-label">Estudiantes · Sedes</div><div class="ii-val"><span data-dato="estudiantes">984</span> estudiantes · 10 sedes</div></div></div>
+  <div class="info-item"><span class="ii-icon">📞</span><div><div class="ii-label">Teléfono</div><div class="ii-val"><span data-dato="telefono">310-615-2695</span></div></div></div>
+</div>
+
+<!-- INFORMACIÓN INSTITUCIONAL (clean) -->
+<div class="inst-strip">
+  <div class="wrap">
+    <div class="inst-intro">
+      <div class="inst-logo-block">
+        <img src="imagenes/escudo.png" alt="Escudo INSTEC">
+        <h1>Institución Educativa<br>de Coyongal</h1>
+        <div class="lema">✦ Valores · Disciplina · Progreso ✦</div>
+      </div>
+      <div class="inst-text">
+        <h2>Educación Rural de Calidad<br>desde el Corazón de Bolívar</h2>
+        <div class="inst-rule"></div>
+        <p>La <strong>Institución Educativa de Coyongal – INSTEC</strong> es una institución oficial ubicada en el corregimiento de Coyongal, a orillas del río Magdalena, a 12 km de Magangué, Bolívar. Con más de 95 años de historia, forma integralmente a niños, niñas y jóvenes rurales en los niveles de preescolar, básica primaria, básica secundaria y media académica.</p>
+        <p>Adoptamos el enfoque pedagógico <strong>CRESE</strong> (Ciudadanía, Reconciliación, Educación Socioemocional, Antirracismo y Cambio Climático), promoviendo una educación que trasciende el aula y transforma comunidades, con un firme compromiso por la formación integral de nuestros estudiantes y egresados.</p>
+        <div class="inst-badges">
+          <span class="badge">🏛️ Oficial</span>
+          <span class="badge">📅 Calendario A</span>
+          <span class="badge">🎓 Bachiller Académico</span>
+          <span class="badge">🌿 Enfoque CRESE</span>
+          <span class="badge">♿ Educación Inclusiva</span>
+        </div>
+      </div>
+    </div>
+    <div class="qs-row">
+      <div class="qs-box"><div class="qs-num"><span data-dato="anios">95+</span></div><div class="qs-label">Años de Historia</div></div>
+      <div class="qs-box"><div class="qs-num"><span data-dato="estudiantes">984</span></div><div class="qs-label">Estudiantes Activos</div></div>
+      <div class="qs-box"><div class="qs-num"><span data-dato="docentes">49</span></div><div class="qs-label">Docentes Titulados</div></div>
+      <div class="qs-box"><div class="qs-num">10</div><div class="qs-label">Sedes Educativas</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- RECURSOS Y PLATAFORMAS (clean, homepage) -->
+<div class="enlaces-home" id="enlaces">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="s-tag">Plataformas y Recursos</span>
+      <h2 class="s-title">Recursos y Plataformas Educativas</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="enlac-block">
+      <div class="enlac-tit">🔗 ENLACES DE INTERÉS</div>
+      <div class="logos-g">
+        <a href="https://iecoyongal.edusac.info/" target="_blank" rel="noopener" class="logo-link" title="Edusac"><img src="imagenes/logo-edusac.png" alt="Edusac"></a>
+        <a href="https://www.fomag.gov.co/" target="_blank" rel="noopener" class="logo-link" title="FOMAG"><img src="imagenes/logo-fomag.png" alt="FOMAG"></a>
+        <a href="https://rrhh.gestionsecretariasdeeducacion.gov.co/humanoEL/Ingresar.aspx?Ent=Magangue" target="_blank" rel="noopener" class="logo-link" title="Humano en Línea"><img src="imagenes/logo-humano-en-linea.png" alt="Humano en Línea"></a>
+        <a href="https://fecode.edu.co/" target="_blank" rel="noopener" class="logo-link" title="FECODE"><img src="imagenes/logo-fecode.png" alt="FECODE"></a>
+        <a href="https://cooaceded.coop/wordpress/" target="_blank" rel="noopener" class="logo-link" title="COOACEDED"><img src="imagenes/logo-cooaceded.png" alt="COOACEDED"></a>
+      </div>
+    </div>
+    <div class="enlac-block">
+      <div class="enlac-tit">💻 CONTENIDOS EDUCATIVOS DIGITALES</div>
+      <div class="logos-g">
+        <a href="https://www.mineducacion.gov.co/portal/micrositios-preescolar-basica-y-media/Evaluar-para-avanzar/" target="_blank" rel="noopener" class="logo-link" title="Evaluar para Avanzar"><img src="imagenes/logo-evaluar-para-avanzar.png" alt="Evaluar para Avanzar"></a>
+        <a href="https://contenidosparaaprender.colombiaaprende.edu.co/" target="_blank" rel="noopener" class="logo-link" title="Contenidos para Aprender"><img src="imagenes/logo-contenidos-para-aprender.png" alt="Contenidos para Aprender"></a>
+        <a href="https://contenidos.ia.colombiaaprende.edu.co/" target="_blank" rel="noopener" class="logo-link" title="Colombia Aprende"><img src="imagenes/logo-colombia-aprende.png" alt="Colombia Aprende"></a>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!-- ═══════════ FIN SECCIÓN INICIO ═══════════ -->
+<!-- ======= CONÓCENOS / MISION / VISION ======= -->
+<div class="subnav" data-page="conocenos"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class="sub-active"><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
+<section class="sec bg-w" id="conocenos" data-page="conocenos">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Identidad Institucional</span>
+      <h2 class="s-title">Conócenos</h2>
+      <div class="s-line"></div>
+      <p class="s-sub">La INSTEC es una institución de carácter oficial ubicada a la margen derecha del río Magdalena, a 12 km de Magangué, comprometida con la educación rural de calidad.</p>
+    </div>
+    <div class="g2">
+      <div>
+        <div id="mision" style="margin-bottom:32px;">
+          <span class="s-tag" style="margin-bottom:12px;display:inline-block;font-size:15px;letter-spacing:2px;padding:6px 18px;">🎯 Misión</span>
+          <h3 style="font-family:Montserrat,sans-serif;font-size:20px;font-weight:800;color:#0D47A1;margin-bottom:12px;">Formación Integral Rural</h3>
+          <p style="font-size:14.5px;color:#555;line-height:1.85;margin-bottom:12px;">La INSTEC tiene como misión formar integralmente a niños, niñas y jóvenes rurales mediante una educación basada en competencias, orientada por los principios de la educación CRESE (Ciudadanía, Reconciliación, Educación Socioemocional, Antirracismo y Cambio Climático).</p>
+          <p style="font-size:14.5px;color:#555;line-height:1.85;">Desde una pedagogía activa, investigativa y constructivista, la institución promueve el desarrollo de saberes, habilidades y valores que permitan a los estudiantes pensar críticamente, actuar con autonomía, convivir pacíficamente y cuidar su entorno natural y social.</p>
+        </div>
+        <div id="vision">
+          <span class="s-tag g" style="margin-bottom:12px;display:inline-block;font-size:15px;letter-spacing:2px;padding:6px 18px;">🌟 Visión 2035</span>
+          <p style="font-size:14.5px;color:#555;line-height:1.85;margin-bottom:12px;">Hacia el año 2035, la INSTEC será reconocida como una comunidad educativa rural líder en la formación integral de seres humanos felices, críticos y con pensamiento científico, capaces de comunicarse en una segunda lengua y comprometidos con el desarrollo sostenible de su entorno.</p>
+          <p style="font-size:14.5px;color:#555;line-height:1.85;">La INSTEC se consolidará como un espacio inclusivo, participativo y ambientalmente responsable, donde la educación se viva como una experiencia significativa que fortalece la ciudadanía, promueve la reconciliación y contribuye a la construcción de una sociedad más justa y en paz.</p>
+        </div>
+      </div>
+      <div class="g2 mini-cards" style="gap:16px;">
+        <div class="card"><div class="card-top az" style="padding:0;height:130px;overflow:hidden;position:relative;"><img src="imagenes/banner-niveles-preescolar-media.jpg" alt="Estudiantes graduados de INSTEC" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div class="card-body"><div class="card-label">Niveles</div><h3>Preescolar a Media</h3><p>Formación completa: preescolar, básica primaria, básica secundaria y media académica con título de Bachiller.</p></div></div>
+        <div class="card"><div class="card-top vd" style="padding:0;height:130px;overflow:hidden;position:relative;"><img src="imagenes/banner-sedes-rurales.jpg" alt="Sedes rurales de INSTEC en los juegos intercursos" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div class="card-body"><div class="card-label">Contexto</div><h3>10 Sedes Rurales</h3><p>Presencia en Coyongal, Tolú, Santa Coita, Roma, Punta de Cartagena, Santa Pabla, Santa Mónica, Isla Perico y más.</p></div></div>
+        <div class="card"><div class="card-top pr" style="padding:0;height:130px;overflow:hidden;position:relative;"><img src="imagenes/banner-comunidad-estudiantes.jpg" alt="Estudiantes de INSTEC en presentación cultural" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div class="card-body"><div class="card-label">Comunidad</div><h3><span data-dato="estudiantes">984</span> Estudiantes</h3><p>Atendemos una población diversa con <span data-dato="docentes">49</span> docentes, incluyendo población inclusiva con convenio CORPIDER.</p></div></div>
+        <div class="card"><div class="card-top or" style="padding:0;height:130px;overflow:hidden;position:relative;"><img src="imagenes/banner-modelo-crese.jpg" alt="Estudiantes de INSTEC en actividad sobre la igualdad" style="width:100%;height:100%;object-fit:cover;display:block;"></div><div class="card-body"><div class="card-label">Enfoque</div><h3>Modelo CRESE</h3><p>Formación basada en Ciudadanía, Reconciliación, Educación Socioemocional, Antirracismo y Cambio Climático.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<div class="subnav" data-page="historia"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class="sub-active"><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
+<section class="sec bg-g" id="historia" data-page="historia">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Desde 1929</span>
+      <h2 class="s-title">Reseña Histórica</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="g2">
+      <div class="hist-box">
+        <p>La INSTEC inició sus labores como escuela privada en <strong>1929</strong>. Las familias pagaban a personas con formación básica para enseñar a leer, escribir y las cuatro operaciones. La escuela funcionaba en las casas de los docentes. Entre los primeros maestros se destacaron <em>Enrique Larios, Pablo Cañas, Felicita Pabuena, Martín De León y Maximiliano Peña</em>.</p>
+        <p>En <strong>1960</strong> inicia como escuela pública, con el nombramiento de la profesora <em>Ernelda Cárcamo</em>. En <strong>1986</strong> se crea el Colegio Departamental de Bachillerato de Coyongal mediante ordenanza N° 31, siendo gobernador el Dr. Armando Villegas Centeno. Inicia labores el 17 de abril de ese año.</p>
+        <p>En <strong>1990</strong>, tras un período de cierre, se reinician labores con la rectora Soledad Fernández Sinning y el profesor Hernán Palomino Acosta, con apenas 13 estudiantes y sin local ni mobiliario.</p>
+        <p>El <strong>14 de junio de 2001</strong> se crea la Concentración Educativa de Coyongal por Decreto N° 395, y al año siguiente se constituye como <strong>Institución Educativa de Coyongal</strong> según ordenanza N° 20, atendiendo 1.146 estudiantes con 32 docentes.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">1929</div><div class="tl-text">Fundación como escuela privada. Primeros docentes: Enrique Larios, Pablo Cañas, entre otros.</div></div>
+        <div class="tl-item"><div class="tl-year">1960</div><div class="tl-text">Inicio como escuela pública. Nombramiento de la profesora Ernelda Cárcamo.</div></div>
+        <div class="tl-item"><div class="tl-year">1986</div><div class="tl-text">Creación del Colegio Departamental de Bachillerato de Coyongal. Ordenanza N° 31.</div></div>
+        <div class="tl-item"><div class="tl-year">1990</div><div class="tl-text">Reapertura con 13 estudiantes bajo la dirección de la rectora Soledad Fernández.</div></div>
+        <div class="tl-item"><div class="tl-year">2001</div><div class="tl-text">Creación de la Institución Educativa de Coyongal – INSTEC. Decreto N° 395.</div></div>
+        <div class="tl-item"><div class="tl-year">2023</div><div class="tl-text">Aprobación mediante Resolución N° 4534 – Secretaría de Educación Municipal de Magangué.</div></div>
+        <div class="tl-item"><div class="tl-year">2024</div><div class="tl-text">Ingreso de 25 nuevos docentes por concurso de méritos. Planta actual: 49 docentes y rector Robin Piñeres Retamoza.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPIOS -->
+<div class="subnav" data-page="principios"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class="sub-active"><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
+<section class="sec bg-w" id="principios" data-page="principios">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Pilares filosóficos</span>
+      <h2 class="s-title">Principios Institucionales</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="prin-g">
+      <div class="prin-item"><div class="prin-num">1</div><div class="prin-text"><h4>Dignidad Humana</h4><p>Toda persona posee un valor intrínseco. Formamos seres conscientes de su valor, solidarios y capaces de reconocer la dignidad de los demás.</p></div></div>
+      <div class="prin-item"><div class="prin-num">2</div><div class="prin-text"><h4>Equidad</h4><p>Garantizamos igualdad de oportunidades valorando las diferencias individuales y culturales, propiciando ambientes inclusivos donde la diversidad es riqueza.</p></div></div>
+      <div class="prin-item"><div class="prin-num">3</div><div class="prin-text"><h4>Diversidad e Interculturalidad</h4><p>Reconocemos la riqueza cultural, étnica y social de nuestra comunidad rural. Fomentamos el diálogo entre saberes y el respeto por las identidades del territorio.</p></div></div>
+      <div class="prin-item"><div class="prin-num">4</div><div class="prin-text"><h4>Desarrollo Integral</h4><p>Formación plena en todas las dimensiones: cognitiva, emocional, social, ética, espiritual y física. Promovemos el saber, el hacer, el ser y el convivir.</p></div></div>
+      <div class="prin-item"><div class="prin-num">5</div><div class="prin-text"><h4>Participación Democrática</h4><p>Fomentamos la intervención activa y responsable de todos en la toma de decisiones y la gestión institucional, fortaleciendo el sentido de pertenencia.</p></div></div>
+      <div class="prin-item"><div class="prin-num">6</div><div class="prin-text"><h4>Convivencia Pacífica</h4><p>Promovemos la vida como valor supremo y el respeto mutuo como base de la convivencia mediante el diálogo, la empatía y la resolución pacífica de conflictos.</p></div></div>
+      <div class="prin-item"><div class="prin-num">7</div><div class="prin-text"><h4>Responsabilidad Ambiental</h4><p>Asumimos la educación comprometida con el entorno natural y cultural. Impulsamos el cuidado del medio ambiente y el desarrollo sostenible.</p></div></div>
+      <div class="prin-item"><div class="prin-num">8</div><div class="prin-text"><h4>Calidad Educativa</h4><p>Buscamos el mejoramiento continuo de nuestros procesos pedagógicos y administrativos, garantizando educación pertinente y acorde al contexto rural.</p></div></div>
+      <div class="prin-item"><div class="prin-num">9</div><div class="prin-text"><h4>Identidad y Pertenencia</h4><p>Fomentamos el orgullo de pertenecer a la INSTEC, reconociendo su historia, valores y compromiso con la comunidad. La identidad fortalece la cohesión institucional.</p></div></div>
+      <div class="prin-item"><div class="prin-num">10</div><div class="prin-text"><h4>Autonomía y Pensamiento Crítico</h4><p>Formamos estudiantes capaces de reflexionar, analizar y decidir responsablemente, construyendo ciudadanía consciente, participativa y transformadora.</p></div></div>
+      <div class="prin-item"><div class="prin-num">11</div><div class="prin-text"><h4>Trabajo Colaborativo</h4><p>Fomentamos el trabajo en equipo, la cooperación y la solidaridad para el logro de metas comunes que fortalecen la unidad institucional.</p></div></div>
+      <div class="prin-item"><div class="prin-num">12</div><div class="prin-text"><h4>Pertinencia y Flexibilidad</h4><p>La educación se adapta a las características del contexto rural, las necesidades de los estudiantes y las transformaciones sociales, económicas y ambientales del entorno.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<div class="subnav" data-page="valores"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class="sub-active"><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
+<section class="sec bg-b" id="valores" data-page="valores">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag g">Nuestro carácter</span>
+      <h2 class="s-title w">Valores Institucionales</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="val-g">
+      <div class="val-card"><div class="val-n">01</div><div class="val-icon">⚖️</div><h4>Respeto</h4><p>Reconocemos y valoramos al otro, aceptando diferencias culturales y personales. Buen trato, escucha activa y sana convivencia entre todos.</p></div>
+      <div class="val-card"><div class="val-n">02</div><div class="val-icon">✅</div><h4>Responsabilidad</h4><p>Cumplimos los deberes académicos y sociales con compromiso y puntualidad. Cada estudiante es consciente de las consecuencias de sus actos.</p></div>
+      <div class="val-card"><div class="val-n">03</div><div class="val-icon">💙</div><h4>Compromiso y Pertenencia</h4><p>Dedicación hacia el estudio y participación en actividades institucionales. Orgullo de ser INSTEC, cuidado de los espacios y búsqueda de la excelencia.</p></div>
+      <div class="val-card"><div class="val-n">04</div><div class="val-icon">🏛️</div><h4>Disciplina</h4><p>Capacidad de autorregular la conducta, cumplir normas y mantener hábitos de orden, esfuerzo y constancia como herramienta de crecimiento personal.</p></div>
+      <div class="val-card"><div class="val-n">05</div><div class="val-icon">💡</div><h4>Honestidad</h4><p>Orientamos todas las acciones hacia la verdad, la transparencia y la coherencia entre lo que se piensa, se dice y se hace.</p></div>
+      <div class="val-card"><div class="val-n">06</div><div class="val-icon">⚡</div><h4>Justicia</h4><p>Promovemos la equidad, la imparcialidad y el respeto por los derechos y deberes de cada persona, garantizando igualdad de trato digno.</p></div>
+      <div class="val-card"><div class="val-n">07</div><div class="val-icon">🤝</div><h4>Solidaridad</h4><p>La vida rural enseña el valor de la cooperación. Promovemos la empatía, la colaboración y la disposición para apoyar a quien lo necesita.</p></div>
+      <div class="val-card"><div class="val-n">08</div><div class="val-icon">🌏</div><h4>Tolerancia</h4><p>Aceptamos y reconocemos las diferencias individuales, culturales y sociales, fortaleciendo la convivencia pacífica y el diálogo como medios de resolución de conflictos.</p></div>
+      <div class="val-card"><div class="val-n">09</div><div class="val-icon">🌿</div><h4>Cuidado del Medio Ambiente</h4><p>Fomentamos el amor y el respeto por la naturaleza, prácticas sostenibles y el uso responsable de los recursos naturales del entorno.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA ACADÉMICA -->
+<section class="sec bg-g" id="oferta" data-page="inicio">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Formación completa</span>
+      <h2 class="s-title">Oferta Académica</h2>
+      <div class="s-line"></div>
+      <p class="s-sub">Jornada matinal · Calendario A · Bachillerato Académico</p>
+    </div>
+    <div class="g4">
+      <div class="nivel-card nc1">
+        <div class="nivel-h"><span class="nivel-em">🎨</span><div class="nivel-gr">Preescolar</div><h3>Preescolar</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Estimulación Temprana</li><li>Pre-lecto-escritura</li><li>Expresión Artística</li>
+            <li>Desarrollo Motriz</li><li>Educación en Valores</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 11:00 a.m. · 20 hrs/semana</div>
+        </div>
+      </div>
+      <div class="nivel-card nc2">
+        <div class="nivel-h"><span class="nivel-em">📖</span><div class="nivel-gr">Grados 1° a 5°</div><h3>Básica Primaria</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Matemáticas</li><li>Lengua Castellana</li><li>Ciencias Naturales</li>
+            <li>Ciencias Sociales</li><li>Tecnología e Informática</li><li>Artística y Ed. Física</li><li>Inglés</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 12:00 p.m. · 25 hrs/semana</div>
+        </div>
+      </div>
+      <div class="nivel-card nc3">
+        <div class="nivel-h"><span class="nivel-em">🔬</span><div class="nivel-gr">Grados 6° a 9°</div><h3>Básica Secundaria</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Álgebra, Geometría y Estadística</li><li>Inglés</li><li>Física y Química</li>
+            <li>Historia, Geografía y Democracia</li><li>Tecnología e Informática</li><li>Ética y Valores</li><li>Educación Religiosa</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 1:00 p.m. · 30 hrs/semana</div>
+        </div>
+      </div>
+      <div class="nivel-card nc4">
+        <div class="nivel-h"><span class="nivel-em">🎓</span><div class="nivel-gr">Grados 10° y 11°</div><h3>Media Académica</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Cálculo y Estadística</li><li>Filosofía</li><li>Inglés Avanzado</li>
+            <li>Emprendimiento</li><li>Ciencias Políticas y Económicas</li><li>Proyecto de Vida</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 1:00 p.m. · 30 hrs/semana · Título Bachiller</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELO PEDAGÓGICO -->
+<section class="sec bg-w" id="modelo" data-page="modelo">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Enfoque educativo</span>
+      <h2 class="s-title">Modelo Pedagógico</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="mod-g">
+      <div>
+        <span style="display:inline-block;background:var(--dorado);color:var(--azul-o);font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;padding:4px 14px;border-radius:2px;margin-bottom:16px;">🔬 Constructivismo Social Activo</span>
+        <h3 style="font-family:Montserrat,sans-serif;font-size:22px;font-weight:900;color:#0D47A1;margin-bottom:14px;line-height:1.2;">Enfoque Integral Basado en Competencias y Educación CRESE</h3>
+        <p style="font-size:14px;color:#555;line-height:1.85;margin-bottom:14px;">La INSTEC asume un enfoque pedagógico integral que orienta su quehacer hacia la formación de seres humanos íntegros, competentes y comprometidos con la transformación de su entorno rural. La educación es entendida como una práctica social que trasciende la simple transmisión de conocimientos para centrarse en la construcción de aprendizajes significativos.</p>
+        <p style="font-size:14px;color:#555;line-height:1.85;margin-bottom:16px;">El docente asume el rol de <strong>mediador del aprendizaje</strong>, promoviendo ambientes que estimulen la curiosidad, la participación y la reflexión crítica. El estudiante es sujeto activo, protagonista de su propio aprendizaje.</p>
+        <ul class="mod-list">
+          <li>Aprendizaje Basado en Proyectos (ABP)</li>
+          <li>Investigación escolar y resolución de problemas</li>
+          <li>Talleres experienciales y pedagogía del servicio</li>
+          <li>Integración de las TIC como herramientas de innovación</li>
+          <li>Contenidos contextualizados al territorio rural</li>
+          <li>Evaluación formativa y continua (SIEE)</li>
+          <li>Educación inclusiva con PIAR y convenio CORPIDER</li>
+        </ul>
+      </div>
+      <div>
+        <div class="crese-box">
+          <h4>🌱 Educación CRESE – 5 Dimensiones Fundamentales</h4>
+          <div class="crese-item"><strong style="color:#1565C0;">Ciudadanía</strong>&nbsp;– activa, democrática y participativa</div>
+          <div class="crese-item"><strong style="color:#1565C0;">Reconciliación</strong>&nbsp;– y construcción de paz</div>
+          <div class="crese-item"><strong style="color:#1565C0;">Educación Socioemocional</strong>&nbsp;– habilidades para la vida</div>
+          <div class="crese-item"><strong style="color:#1565C0;">Antirracismo</strong>&nbsp;– y reconocimiento de la diversidad</div>
+          <div class="crese-item"><strong style="color:#1565C0;">Cambio Climático</strong>&nbsp;– conciencia y acción ambiental</div>
+        </div>
+        <div style="background:#fff;border:1px solid #e0e4ef;border-radius:8px;padding:24px;margin-top:20px;box-shadow:0 2px 12px rgba(21,101,192,.07);">
+          <h4 style="font-family:Montserrat,sans-serif;font-size:14px;font-weight:800;color:#0D47A1;margin-bottom:12px;">📐 Fundamentos Filosóficos</h4>
+          <p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:10px;"><strong>Antropológico:</strong> El ser humano como sujeto activo, libre, responsable y transformador de su entorno.</p>
+          <p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:10px;"><strong>Epistemológico:</strong> El conocimiento como construcción social y dinámica mediante el diálogo y la reflexión crítica.</p>
+          <p style="font-size:13px;color:#555;line-height:1.75;margin-bottom:10px;"><strong>Pedagógico:</strong> Modelo constructivista social, activo y por competencias que articula el conocimiento con la vida.</p>
+          <p style="font-size:13px;color:#555;line-height:1.75;"><strong>Sociológico:</strong> Institución abierta a la comunidad, comprometida con el desarrollo local, la inclusión y la equidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS PEDAGÓGICOS -->
+<section class="sec bg-g" id="proyectos" data-page="modelo">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag gr">Educación viva</span>
+      <h2 class="s-title">Proyectos Pedagógicos Institucionales</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="proy-g">
+      <div class="proy-card"><div class="proy-icon">🌿</div><h4>Proyecto de Educación Ambiental "Escuela Sostenible"</h4><p>Promueve el amor por la naturaleza, la conservación de los recursos naturales y la conciencia ecológica como parte de la identidad rural de Coyongal.</p></div>
+      <div class="proy-card"><div class="proy-icon">⚠️</div><h4>Plan de Gestión Integral de Riesgos Escolares</h4><p>Estrategias de prevención y atención de emergencias que garantizan la seguridad de toda la comunidad educativa en las 10 sedes.</p></div>
+      <div class="proy-card"><div class="proy-icon">🤝</div><h4>Proyecto de Convivencia Escolar</h4><p>Incluye Escuela para Padres, Proyecto de Valores, Proyecto de Vida, Educación Emocional y Educación para la Sexualidad y Construcción de Ciudadanía.</p></div>
+      <div class="proy-card"><div class="proy-icon">🕊️</div><h4>Proyecto de Democracia, Justicia y Paz</h4><p>Forma ciudadanos activos, participativos y comprometidos con la construcción de una sociedad justa, equitativa y en paz desde el aula.</p></div>
+      <div class="proy-card"><div class="proy-icon">🌱</div><h4>Servicio Social Estudiantil Obligatorio</h4><p>Los estudiantes de media contribuyen activamente al desarrollo comunitario mediante proyectos de servicio social que impactan positivamente el entorno rural.</p></div>
+      <div class="proy-card"><div class="proy-icon">👶</div><h4>Atención a la Primera Infancia</h4><p>Proyecto pedagógico de calidad para garantizar el desarrollo integral y los aprendizajes fundamentales desde los primeros años de vida de los niños.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GOBIERNO ESCOLAR -->
+<div class="subnav" data-page="gobierno"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class="sub-active"><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
+<section class="sec bg-w" id="gobierno" data-page="gobierno">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Democracia escolar</span>
+      <h2 class="s-title">Gobierno Escolar</h2>
+      <div class="s-line"></div>
+      <p class="s-sub">La INSTEC cuenta con tres órganos de gobierno escolar y múltiples espacios de participación democrática de la comunidad educativa.</p>
+    </div>
+    <div class="gov-g">
+      <div class="gov-card">
+        <div class="gov-top"><span class="gov-icon">🏛️</span><h4>Consejo Directivo</h4></div>
+        <div class="gov-body"><p>Instancia directiva de participación de la comunidad educativa. Presidido por el rector. Integrado por representantes de docentes, estudiantes, padres de familia, exalumnos y sector productivo.</p></div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-top" style="background:linear-gradient(135deg,#1B5E20,#2E7D32);"><span class="gov-icon">📚</span><h4>Consejo Académico</h4></div>
+        <div class="gov-body"><p>Instancia superior para la orientación pedagógica. Presidido por el rector, con docentes líderes de área. Organiza el plan de estudios y evalúa el currículo permanentemente.</p></div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-top" style="background:linear-gradient(135deg,#4A148C,#7B1FA2);"><span class="gov-icon">👤</span><h4>Rector</h4></div>
+        <div class="gov-body"><p><strong><span data-dato="rector">Robin Jhair Piñeres Retamoza</span></strong>. Máxima instancia ejecutiva. Orienta la ejecución del PEI, promueve la calidad educativa, mantiene relaciones con autoridades educativas y comunidad.</p></div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-top" style="background:linear-gradient(135deg,#BF360C,#E64A19);"><span class="gov-icon">🗣️</span><h4>Personero Estudiantil</h4></div>
+        <div class="gov-body"><p>Estudiante del último grado elegido por voto secreto. Promueve el ejercicio de los derechos y deberes de los estudiantes y recibe sus quejas y reclamos ante directivos.</p></div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-top" style="background:linear-gradient(135deg,#00695C,#00897B);"><span class="gov-icon">🔍</span><h4>Contralor Escolar</h4></div>
+        <div class="gov-body"><p>Vela por la transparencia y buen uso de los recursos públicos. Vigila fondos de servicio educativo, restaurante escolar, obras de infraestructura y proyectos institucionales.</p></div>
+      </div>
+      <div class="gov-card">
+        <div class="gov-top" style="background:linear-gradient(135deg,#1A237E,#283593);"><span class="gov-icon">👪</span><h4>Consejo de Padres</h4></div>
+        <div class="gov-body"><p>Órgano de participación de los padres de familia destinado a asegurar su continua participación en el proceso educativo y elevar los resultados de calidad del servicio.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SÍMBOLOS INSTITUCIONALES -->
+<div class="subnav" data-page="simbolos"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class="sub-active"><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
+<section class="sec bg-g" id="simbolos" data-page="simbolos">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Identidad INSTEC</span>
+      <h2 class="s-title">Símbolos Institucionales</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="g2" style="gap:32px;margin-bottom:48px;">
+      <div class="info-card" style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 4px 20px rgba(21,101,192,.08);">
+        <h3 style="font-family:Montserrat,sans-serif;font-size:18px;font-weight:800;color:#0D47A1;margin-bottom:18px;">🛡️ El Escudo</h3><div style="display:flex;gap:24px;align-items:center;margin-bottom:18px;flex-wrap:wrap;"><div style="flex-shrink:0;background:linear-gradient(135deg,#f4f8ff,#eef3fc);border:1px solid rgba(21,101,192,.15);border-radius:14px;padding:12px;box-shadow:0 6px 22px rgba(21,101,192,.14);"><img src="imagenes/escudo-simbolos.jpg" alt="Escudo de la Institución Educativa de Coyongal" style="display:block;width:150px;height:auto;border-radius:8px;"></div><div style="flex:1;min-width:200px;">
+        <p style="font-size:13.5px;color:#555;line-height:1.85;margin-bottom:10px;">El escudo de la INSTEC tiene un triángulo curvilíneo dividido diagonalmente por una franja blanca, rodeado de guirnaldas de laureles que simbolizan la inmortalidad de la victoria.</p>
+        <p style="font-size:13.5px;color:#555;line-height:1.85;margin-bottom:10px;"><strong>Colores azul rey y blanco</strong>: los colores institucionales. En la parte superior: un <em>computador</em> (TIC) y un <em>libro con pluma</em> (sabiduría). En la parte inferior: una <em>mazorca de maíz</em> (agricultura) y un <em>pez</em> (pesca del río Magdalena). En la cinta inferior el lema: <strong>"Valores, Disciplina y Progreso"</strong>.</p>
+        </div>
+        </div>
+      </div>
+      <div class="bandera-box">
+        <div class="bandera-img"><div class="bf1"></div><div class="bf2"><img src="imagenes/escudo.png" alt="Escudo en la bandera" style="width:42px;height:42px;object-fit:contain;"></div><div class="bf3"></div></div>
+        <div class="bandera-text">
+          <h4>🚩 La Bandera</h4>
+          <p>Dimensión 100×130 cm. Tres franjas horizontales: <strong>azul rey superior (30%)</strong> – cielo, tranquilidad, lealtad y fortaleza; <strong>blanca intermedia (40%)</strong> – unidad, fraternidad, armonía y paz, con el escudo institucional en el centro; <strong>azul rey inferior (30%)</strong> – espiritualidad y justicia.</p>
+        </div>
+      </div>
+    </div>
+    <!-- LEMA -->
+    <div class="lema-box" style="background:linear-gradient(135deg,#0D47A1,#1976D2);border-radius:8px;padding:32px 40px;text-align:center;color:#fff;margin-bottom:32px;">
+      <p style="font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;letter-spacing:4px;color:rgba(255,255,255,.6);text-transform:uppercase;margin-bottom:10px;">Lema Institucional</p>
+      <h3 style="font-family:Montserrat,sans-serif;font-size:clamp(18px,3vw,28px);font-weight:900;color:#F9A825;line-height:1.3;">"Valores como principio, Disciplina como base y Progreso como fin"</h3>
+    </div>
+    <!-- HIMNO -->
+    <div class="himno-box">
+      <div style="text-align:center;margin-bottom:26px;position:relative;z-index:1;">
+        <p style="font-family:Montserrat,sans-serif;font-size:11px;font-weight:800;letter-spacing:5px;color:rgba(249,168,37,.85);text-transform:uppercase;margin-bottom:6px;">♪ Canto Institucional ♪</p>
+        <h3 style="font-family:Montserrat,sans-serif;font-size:clamp(28px,5vw,46px);font-weight:900;color:#F9A825;line-height:1.1;text-transform:uppercase;letter-spacing:2px;text-shadow:0 2px 12px rgba(0,0,0,.35);margin:0;">Himno de INSTEC</h3>
+        <div style="width:80px;height:4px;background:linear-gradient(90deg,#F9A825,#fff);border-radius:4px;margin:14px auto 8px;"></div>
+        <p style="font-family:'Open Sans',sans-serif;font-size:12.5px;font-style:italic;color:rgba(255,255,255,.7);margin:0;">Letra: Ismael Bobadilla</p>
+      </div>
+      <div class="himno-cols">
+        <div>
+          <div class="himno-estrofa"><div class="est-num">I</div><p>Ha llegado el momento sublime<br>Del talento, surgir y triunfar<br>Se rompieron por fin las cadenas<br>De ignorancia y de incapacidad</p></div>
+          <div class="himno-coro"><div class="est-num">CORO</div><p>Oh Institución Educativa<br>Eres mi tabla de salvación<br>Para forjar el rol de mi vida<br>Por siempre te llevaré prendida<br>En el fondo de mi corazón (BIS)</p></div>
+          <div class="himno-estrofa"><div class="est-num">II</div><p>Santa Mónica, isla y Santa Pabla<br>Playa y punta de Cartagena<br>Guamal, Roma, Tolú y Santa Coita<br>A estudiar Coyongal nos invita<br>Para unidos progresos alcanzar (BIS)</p></div>
+        </div>
+        <div>
+          <div class="himno-estrofa"><div class="est-num">III</div><p>Con INSTEC se alegra mi mañana<br>Cual camino de amor y amistad<br>Talento que se forja en tus aulas<br>Será siempre estandarte de paz.</p></div>
+          <div class="himno-coro"><div class="est-num">CORO</div><p>Oh Institución Educativa<br>Eres mi tabla de salvación<br>Si forjaste el rol de mi vida<br>Por siempre te llevaré prendida<br>En el fondo de mi corazón (BIS)</p></div>
+          <div class="himno-letra">Letra: Ismael Bobadilla</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEDES -->
+<section class="sec bg-w" id="sedes" data-page="sedes">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">10 sedes</span>
+      <h2 class="s-title">Nuestras Sedes</h2>
+      <div class="s-line"></div>
+      <p class="s-sub">La INSTEC tiene presencia en el corregimiento de Coyongal y sus veredas aledañas. Siete sedes funcionan en modalidad multigrado y tres en modalidad unigrado.</p>
+    </div>
+    <div style="overflow-x:auto;">
+      <table class="sedes-table">
+        <thead>
+          <tr><th>Sede</th><th>Código DANE</th><th>Dirección</th><th>Modalidad</th><th>Niveles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td data-label="Sede"><strong>Sede Principal (Bachillerato)</strong></td><td data-label="Código DANE">213430002337</td><td data-label="Dirección">Coyongal – Av. El Campo</td><td data-label="Modalidad"><span class="sede-badge sb-u">Unigrado</span></td><td data-label="Niveles">Básica Secundaria y Media</td></tr>
+          <tr><td data-label="Sede">Sede María Donado Arroyo</td><td data-label="Código DANE">213430800072</td><td data-label="Dirección">Coyongal – La Plaza</td><td data-label="Modalidad"><span class="sede-badge sb-u">Unigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Tolú</td><td data-label="Código DANE">213430000172</td><td data-label="Dirección">Tolú – Barrio Abajo</td><td data-label="Modalidad"><span class="sede-badge sb-u">Unigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Santa Coita</td><td data-label="Código DANE">213430001012</td><td data-label="Dirección">Santa Coita – Barrio Abajo</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Roma</td><td data-label="Código DANE">213430001870</td><td data-label="Dirección">Roma – Barrio Abajo</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Punta de Cartagena</td><td data-label="Código DANE">213430000539</td><td data-label="Dirección">Punta de Cartagena – Centro</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Playa de las Flores</td><td data-label="Código DANE">213430002400</td><td data-label="Dirección">Playa de las Flores</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Santa Pabla</td><td data-label="Código DANE">213430002990</td><td data-label="Dirección">Santa Pabla – Sector Central</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Santa Mónica</td><td data-label="Código DANE">213430001748</td><td data-label="Dirección">Santa Mónica – Sector Central</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+          <tr><td data-label="Sede">Sede Isla Perico</td><td data-label="Código DANE">213430002850</td><td data-label="Dirección">Isla Perico</td><td data-label="Modalidad"><span class="sede-badge sb-m">Multigrado</span></td><td data-label="Niveles">Preescolar y Básica Primaria</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONVENIOS -->
+<section class="sec bg-g" id="convenios" data-page="egresados">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag gr">Alianzas estratégicas</span>
+      <h2 class="s-title">Convenios Institucionales</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="conv-g">
+      <div class="conv-card" style="border-left-color:#7B1FA2;"><div class="conv-icon">♿</div><div class="conv-text"><h4>CORPIDER – Educación Inclusiva</h4><p>Convenio para atender a la población con necesidades educativas especiales. Se elaboran PIAR individualizados y se realizan campañas de capacitación y acompañamiento a docentes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EGRESADOS -->
+<section class="sec bg-w" id="egresados" data-page="egresados">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Orgullo INSTEC</span>
+      <h2 class="s-title">Perfil del Egresado</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="g2">
+      <div class="info-card" style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 4px 20px rgba(21,101,192,.08);border-left:5px solid var(--dorado);">
+        <h3 style="font-family:Montserrat,sans-serif;font-size:18px;font-weight:800;color:#0D47A1;margin-bottom:14px;">¿Quién es el Egresado INSTEC?</h3>
+        <p style="font-size:14px;color:#555;line-height:1.85;margin-bottom:12px;">El egresado de la INSTEC es un ciudadano íntegro, responsable y comprometido con el desarrollo de su comunidad. Se caracteriza por su formación ética, académica y social, producto de un proceso educativo que promueve el pensamiento crítico, la autonomía, la solidaridad y el respeto por la diversidad.</p>
+        <p style="font-size:14px;color:#555;line-height:1.85;margin-bottom:12px;">Es un ser humano consciente de su papel en la sociedad, que aplica los conocimientos, habilidades y valores adquiridos para contribuir al progreso social, económico, cultural y ambiental de su entorno, especialmente en el contexto rural.</p>
+        <p style="font-size:14px;color:#555;line-height:1.85;">Se proyecta como un ciudadano que valora la educación, busca la superación personal y profesional, y ejerce su libertad con responsabilidad, compromiso y sentido ético.</p>
+      </div>
+      <div style="display:grid;gap:14px;">
+        <div style="background:var(--gris);border-radius:6px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:24px;">🚀</span><div><strong style="font-family:Montserrat,sans-serif;font-size:13px;color:#0D47A1;">Espíritu Emprendedor</strong><p style="font-size:13px;color:#555;margin-top:3px;line-height:1.6;">Liderazgo positivo, capacidad de trabajo en equipo e ideas innovadoras para proyectos comunitarios.</p></div>
+        </div>
+        <div style="background:var(--gris);border-radius:6px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:24px;">🎓</span><div><strong style="font-family:Montserrat,sans-serif;font-size:13px;color:#0D47A1;">Acceso a Educación Superior</strong><p style="font-size:13px;color:#555;margin-top:3px;line-height:1.6;">Preparación académica que les permite continuar estudios técnicos, tecnológicos y universitarios para seguir creciendo.</p></div>
+        </div>
+        <div style="background:var(--gris);border-radius:6px;padding:18px 20px;display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:24px;">🌿</span><div><strong style="font-family:Montserrat,sans-serif;font-size:13px;color:#0D47A1;">Compromiso con el Territorio</strong><p style="font-size:13px;color:#555;margin-top:3px;line-height:1.6;">Amor por Coyongal y sus veredas. El egresado es agente de cambio y desarrollo sostenible en su comunidad.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<section class="sec bg-g" id="documentos" data-page="documentos">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Transparencia</span>
+      <h2 class="s-title">Documentos Institucionales</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="docs-g" id="docsGrid">
+      <a href="https://www.mineducacion.gov.co" target="_blank" class="doc-item"><div class="doc-icon">🇨🇴</div><div><div class="doc-name">Normatividad MEN</div><div class="doc-type">Enlace externo · MEN</div></div></a>
+    </div>
+    <p class="docs-nota">📂 Los documentos institucionales se publicarán aquí muy pronto. Si necesitas alguno con urgencia, <a href="#" onclick="return goPage('contacto')" style="color:var(--azul);font-weight:700;">escríbenos</a>.</p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="sec bg-b" id="contacto" data-page="contacto">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag g">Estamos para servirle</span>
+      <h2 class="s-title w">Contáctenos</h2>
+      <div class="s-line"></div>
+    </div>
+    <div class="ct-g">
+      <div class="ct-info">
+        <h3>Información Oficial</h3>
+        <div class="ct-item"><div class="ct-icon">👤</div><div><div class="ct-label">Rector</div><div class="ct-val"><span data-dato="rector">Robin Jhair Piñeres Retamoza</span></div></div></div>
+        <div class="ct-item"><div class="ct-icon">📍</div><div><div class="ct-label">Dirección</div><div class="ct-val">Corregimiento de Coyongal<br>Magangué, Bolívar – Colombia</div></div></div>
+        <div class="ct-item"><div class="ct-icon">📞</div><div><div class="ct-label">Teléfono</div><div class="ct-val"><span data-dato="telefono">310-615-2695</span></div></div></div>
+        <div class="ct-item"><div class="ct-icon">✉️</div><div><div class="ct-label">Correo Electrónico</div><div class="ct-val"><span data-dato="correo">iecoyongal@yahoo.com</span></div></div></div>
+        <div class="ct-item"><div class="ct-icon">🕐</div><div><div class="ct-label">Horario de Atención</div><div class="ct-val"><span data-dato="horario">Lunes a Viernes, 7:00 a.m. – 4:00 p.m.</span></div></div></div>
+        <div class="ct-item"><div class="ct-icon">🏛️</div><div><div class="ct-label">NIT / DANE</div><div class="ct-val">NIT: <span data-dato="nit">800181494-2</span><br>DANE: <span data-dato="dane">213430002337</span></div></div></div>
+        <div style="margin-top:16px;">
+          <p style="font-size:10px;font-weight:700;letter-spacing:2px;color:var(--dorado);text-transform:uppercase;margin-bottom:8px;">Redes Sociales</p>
+          <div class="redes-g">
+            <a href="https://www.facebook.com/admi.instec" data-enlace="facebook" target="_blank" class="red-btn red-fb">📘 Facebook</a>
+            <a href="https://www.instagram.com/iecoyongal" data-enlace="instagram" target="_blank" class="red-btn red-ig">📷 @iecoyongal</a>
+          </div>
+        </div>
+      </div>
+      <div class="ct-form">
+        <h3>📩 Envíanos un Mensaje</h3>
+        <div class="frow">
+          <div class="fg"><label for="fNombre">Nombre Completo</label><input id="fNombre" type="text" placeholder="Tu nombre completo"></div>
+          <div class="fg"><label for="fCorreo">Correo o Teléfono</label><input id="fCorreo" type="text" placeholder="Para poder responderte"></div>
+        </div>
+        <div class="fg"><label for="fAsunto">Asunto</label>
+          <select id="fAsunto">
+            <option value="">Seleccionar asunto</option>
+            <option>Información sobre <span data-dato="matriculas">Matrículas 2026</span></option>
+            <option>Certificados y Constancias</option>
+            <option>Boletines y Calificaciones</option>
+            <option>Documentos Institucionales</option>
+            <option>Sugerencia o Queja</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="fg"><label for="fMensaje">Mensaje</label><textarea id="fMensaje" placeholder="Escribe tu mensaje aquí..."></textarea></div>
+        <button class="btn-send" onclick="enviarMensaje('correo')">📧 Enviar por Correo</button>
+        <button class="btn-wa" onclick="enviarMensaje('whatsapp')">💬 Enviar por WhatsApp</button>
+        <div class="form-msg" id="formMsg" role="status"></div>
+        <p class="form-nota">Al enviar se abrirá tu aplicación de correo o WhatsApp con el mensaje listo; solo debes confirmar el envío.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft">
+    <div class="fb">
+      <img src="imagenes/escudo.png" alt="Escudo INSTEC">
+      <h3>Institución Educativa de Coyongal – INSTEC</h3>
+      <p>Formando integralmente a niños, niñas y jóvenes rurales con valores, disciplina y visión de progreso. <span data-dato="estudiantes">984</span> estudiantes · 10 sedes · Magangué, Bolívar.</p>
+      <p style="margin-top:8px;font-size:11px;">NIT: <span data-dato="nit">800181494-2</span> · DANE: <span data-dato="dane">213430002337</span><br>Res. N° 4534 – 2 nov. 2023</p>
+    </div>
+    <div class="fc">
+      <h4>Institución</h4>
+      <ul>
+        <li><a href="#" onclick="return goPage('historia')">Reseña Histórica</a></li>
+        <li><a href="#" onclick="return goPage('conocenos','mision')">Misión y Visión 2035</a></li>
+        <li><a href="#" onclick="return goPage('simbolos')">Símbolos Institucionales</a></li>
+        <li><a href="#" onclick="return goPage('gobierno')">Gobierno Escolar</a></li>
+        <li><a href="#" onclick="return goPage('sedes')">Nuestras 10 Sedes</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Académico</h4>
+      <ul>
+        <li><a href="#" onclick="return goPage('inicio','oferta')">Preescolar</a></li>
+        <li><a href="#" onclick="return goPage('inicio','oferta')">Básica Primaria</a></li>
+        <li><a href="#" onclick="return goPage('inicio','oferta')">Básica Secundaria</a></li>
+        <li><a href="#" onclick="return goPage('inicio','oferta')">Media Académica</a></li>
+        <li><a href="#" onclick="return goPage('modelo','proyectos')">Proyectos Pedagógicos</a></li>
+        <li><a href="#" onclick="return goPage('modelo')">Modelo CRESE</a></li>
+      </ul>
+    </div>
+    <div class="fc">
+      <h4>Comunidad</h4>
+      <ul>
+        <li><a href="#" onclick="return goPage('egresados')">Egresados</a></li>
+        <li><a href="#" onclick="return goPage('egresados','convenios')">Convenios</a></li>
+        <li><a href="#" onclick="return goPage('documentos')">Documentos</a></li>
+        <li><a href="#" onclick="return goPage('contacto')"><span data-dato="matriculas">Matrículas 2026</span></a></li>
+        <li><a href="#" onclick="return goPage('contacto')">Contacto</a></li>
+        <li><a href="#" onclick="return goPage('inicio','semana-cultural')">Semana Cultural</a></li>
+        <li><a href="#" onclick="return goPage('inicio','tambora')">Talleres de Tambora</a></li>
+        <li><a href="#" onclick="return goPage('inicio','enlaces')">Plataformas Educativas</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb-bot">
+    <p>© 2026 Institución Educativa de Coyongal – INSTEC | Magangué, Bolívar, Colombia. Todos los derechos reservados.</p>
+    <p class="fb-lema">✦ Valores · Disciplina · Progreso ✦</p>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button id="lbClose" aria-label="Cerrar foto">✕</button><img id="lbImg" alt=""><p id="lbCap"></p></div>
+
+<button class="btop" id="btop" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+<script>
+/* ═══════════════ ROUTER DE PÁGINAS (navegación entre pestañas) ═══════════════ */
+const PAGE_NAMES = ['inicio','conocenos','historia','principios','valores','simbolos','gobierno','egresados','sedes','documentos','modelo','contacto'];
+// Sub-páginas que pertenecen al grupo "Conócenos" (resaltan esa pestaña principal)
+const CONOCENOS_GROUP = ['conocenos','historia','principios','valores','simbolos','gobierno'];
+function goPage(page, anchor){
+  if(!PAGE_NAMES.includes(page)) page='inicio';
+  // mostrar solo los bloques de la página seleccionada
+  document.querySelectorAll('[data-page]').forEach(el=>{
+    el.classList.toggle('page-active', el.getAttribute('data-page')===page);
+  });
+  // resaltar la pestaña principal activa en el menú
+  document.querySelectorAll('.nav-list>li>a,.nav-mobile a').forEach(a=>a.classList.remove('active-tab'));
+  var tabKey = CONOCENOS_GROUP.includes(page) ? 'conocenos' : page;
+  document.querySelectorAll('.nav-list>li>a,.nav-mobile a').forEach(a=>{
+    var oc=a.getAttribute('onclick')||'';
+    if(oc.indexOf("goPage('"+tabKey+"'")>-1 && oc.indexOf(',')===-1){ a.classList.add('active-tab'); }
+  });
+  // pausar el video de tambora al salir de inicio
+  if(page!=='inicio' && window.resetVideos) resetVideos();
+  // cerrar menú móvil
+  setMenu(false);
+  // guardar en el hash para poder volver / compartir
+  history.replaceState(null,'', '#'+page);
+  // ir al inicio de la página o a una sección concreta
+  if(anchor){
+    var t=document.getElementById(anchor);
+    if(t){ setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),70); }
+    else { window.scrollTo({top:0,behavior:'auto'}); }
+  } else {
+    window.scrollTo({top:0,behavior:'auto'});
+  }
+  return false; // evita que el href="#" salte
+}
+// Cargar la página según el hash de la URL (o inicio por defecto)
+(function initPage(){
+  var h=(location.hash||'').replace('#','');
+  goPage(PAGE_NAMES.includes(h)?h:'inicio');
+})();
+
+/* ═══════════════ CARRUSEL ═══════════════ */
+let cur=0,tot=1,tmr;
+function updateC(){
+  tot=document.querySelectorAll('#carousel .c-slide').length||1;
+  document.querySelectorAll('#carousel .c-slide').forEach((s,i)=>s.classList.toggle('active',i===cur));
+  document.querySelectorAll('#cdots .dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
+  document.getElementById('slideCounter').textContent=(cur+1)+' / '+tot;
+}
+function moveC(d){cur=(cur+d+tot)%tot;updateC();resetTmr();}
+function goSlide(n){cur=n;updateC();resetTmr();}
+function resetTmr(){clearInterval(tmr);tmr=setInterval(()=>moveC(1),5800);}
+let tx=0;
+document.getElementById('carousel').addEventListener('touchstart',e=>{tx=e.touches[0].clientX;});
+document.getElementById('carousel').addEventListener('touchend',e=>{let d=tx-e.changedTouches[0].clientX;if(Math.abs(d)>50)moveC(d>0?1:-1);});
+
+/* ═══════════════ VISOR DE FOTOS (Semana Cultural) ═══════════════ */
+(function(){
+  var lb=document.getElementById('lightbox'),li=document.getElementById('lbImg'),lc=document.getElementById('lbCap');
+  function abrir(el){ li.src=el.dataset.full; li.alt=el.dataset.cap; lc.textContent=el.dataset.cap; lb.classList.add('open'); document.getElementById('lbClose').focus(); }
+  function cerrar(){ lb.classList.remove('open'); }
+  // delegación: funciona también con las fotos que se cargan desde los datos
+  document.addEventListener('click',e=>{ var el=e.target.closest('.polaroid[data-full]'); if(el) abrir(el); });
+  document.addEventListener('keydown',e=>{
+    var el=e.target.closest&&e.target.closest('.polaroid[data-full]');
+    if(el&&(e.key==='Enter'||e.key===' ')){ e.preventDefault(); abrir(el); }
+    if(e.key==='Escape') cerrar();
+  });
+  lb.addEventListener('click',cerrar);
+})();
+
+/* ═══════════════ CONTENIDO EDITABLE (carpeta datos/, se edita desde el panel) ═══════════════ */
+(function(){
+  // escapa texto para insertarlo en HTML de forma segura
+  const esc=t=>String(t==null?'':t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  // el panel guarda rutas como "/imagenes/foto.jpg"; se usan relativas para que funcionen en cualquier carpeta
+  const ruta=r=>esc(String(r||'').replace(/^\/+/,''));
+  const cargar=n=>fetch('datos/'+n+'.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error(n); return r.json(); });
+
+  cargar('institucion').then(d=>{
+    document.querySelectorAll('[data-dato]').forEach(el=>{ var v=d[el.dataset.dato]; if(v!=null && v!=='') el.textContent=v; });
+    document.querySelectorAll('[data-enlace]').forEach(el=>{ var v=d[el.dataset.enlace]; if(v) el.href=v; });
+    if(d.correo) CORREO_INST=d.correo;
+    if(d.whatsapp) WHATSAPP_INST=String(d.whatsapp).replace(/\D/g,'');
+  }).catch(()=>{});
+
+  cargar('carrusel').then(lista=>{
+    if(!lista.length) return;
+    var c=document.getElementById('carousel');
+    c.querySelectorAll('.c-slide').forEach(x=>x.remove());
+    var html=lista.map((f,i)=>'<div class="c-slide'+(i?'':' active')+'"><img class="slide-photo" src="'+ruta(f.imagen)+'" alt="'+esc(f.descripcion)+'"'+(i?' loading="lazy"':'')+'></div>').join('');
+    c.insertAdjacentHTML('afterbegin',html);
+    document.getElementById('cdots').innerHTML=lista.map((_,i)=>'<div class="dot'+(i?'':' active')+'" onclick="goSlide('+i+')"></div>').join('');
+    cur=0; updateC(); resetTmr();
+  }).catch(()=>{ updateC(); resetTmr(); });
+
+  cargar('noticias').then(lista=>{
+    document.getElementById('noticiasGrid').innerHTML=lista.map((n,i)=>
+      '<article class="news-card"><div class="news-thumb">'+
+        (n.etiqueta?'<span class="news-tag">'+esc(n.etiqueta)+'</span>':'')+
+        '<span class="news-num">'+(i+1)+'</span>'+
+        (n.imagen?'<img src="'+ruta(n.imagen)+'" alt="'+esc(n.titulo)+'" loading="lazy">':'')+
+      '</div><div class="news-body"><h3 class="news-title">'+esc(n.titulo)+'</h3>'+
+        '<p class="news-desc">'+esc(n.descripcion)+'</p>'+
+        (n.fecha?'<div class="news-date">📅 '+esc(n.fecha)+'</div>':'')+
+      '</div></article>').join('');
+  }).catch(()=>{});
+
+  cargar('documentos').then(lista=>{
+    var grid=document.getElementById('docsGrid');
+    grid.insertAdjacentHTML('afterbegin',lista.map(d=> d.archivo
+      ? '<a href="'+ruta(d.archivo)+'" target="_blank" rel="noopener" class="doc-item"><div class="doc-icon">'+esc(d.icono||'📄')+'</div><div><div class="doc-name">'+esc(d.nombre)+'</div><div class="doc-type">⬇ Descargar'+(d.detalle?' · '+esc(d.detalle):'')+'</div></div></a>'
+      : '<div class="doc-item doc-pend"><div class="doc-icon">'+esc(d.icono||'📄')+'</div><div><div class="doc-name">'+esc(d.nombre)+'</div><div class="doc-type"><span class="doc-soon">PRÓXIMAMENTE</span></div></div></div>'
+    ).join(''));
+    var nota=document.querySelector('.docs-nota');
+    if(nota && lista.every(d=>d.archivo)) nota.style.display='none';
+  }).catch(()=>{});
+
+  cargar('semana-cultural').then(d=>{
+    if(d.subtitulo) document.getElementById('culturaSub').textContent=d.subtitulo;
+    document.getElementById('culturaGrid').innerHTML=(d.fotos||[]).map((f,i)=>{
+      var pie=String(f.pie||'').trim(), cap=pie+' – Semana Cultural INSTEC';
+      return '<div class="cultura-col">'+
+        '<figure class="polaroid '+(i%2?'t-r':'t-l')+'" tabindex="0" role="button" aria-label="Ampliar foto: '+esc(pie)+'" data-full="'+ruta(f.imagen)+'" data-cap="'+esc(cap)+'">'+
+          '<span class="tape"></span><img src="'+ruta(f.imagen)+'" alt="'+esc(pie||'Foto de la Semana Cultural')+'" loading="lazy"><span class="zoom">🔍</span>'+
+          '<figcaption>'+esc(pie)+'</figcaption></figure>'+
+        (f.titulo||f.texto?'<div class="cultura-card'+(i%2?' c2':'')+'">'+(f.titulo?'<h3>'+esc(f.titulo)+'</h3>':'')+(f.texto?'<p>'+esc(f.texto)+'</p>':'')+'</div>':'')+
+      '</div>';
+    }).join('');
+  }).catch(()=>{});
+})();
+
+/* ═══════════════ VIDEOS (YouTube) ═══════════════ */
+// Videos desde YouTube: el reproductor se carga solo al darle play
+(function(){
+  var videos=[['tamboraVideo','tamboraFrame','tamboraPlay']]
+    .map(ids=>ids.map(id=>document.getElementById(id))).filter(v=>v[0]);
+  // detiene los videos (quita el reproductor) y vuelve a mostrar la miniatura
+  window.resetVideos=function(excepto){
+    videos.forEach(([box,frame])=>{ if(box!==excepto && frame.classList.contains('playing')){ box.innerHTML=''; frame.classList.remove('playing'); } });
+  };
+  // elige la mejor miniatura disponible (YouTube devuelve una imagen gris de 120x90 cuando no existe)
+  videos.forEach(([box])=>{
+    var lista=(box.dataset.thumbs||'').split(',').filter(Boolean);
+    (function probar(i){
+      if(i>=lista.length) return;
+      var url='https://i.ytimg.com/vi/'+box.dataset.yt+'/'+lista[i]+'.jpg', img=new Image();
+      img.onload=()=>{ if(img.naturalWidth>120) box.style.backgroundImage='url("'+url+'")'; else probar(i+1); };
+      img.onerror=()=>probar(i+1);
+      img.src=url;
+    })(0);
+  });
+  videos.forEach(([box,frame,btn])=>{
+    btn.addEventListener('click',()=>{
+      resetVideos(box);
+      box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+box.dataset.yt+'?autoplay=1&rel=0&playsinline=1" title="'+box.dataset.title+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+      frame.classList.add('playing');
+    });
+  });
+})();
+
+/* ═══════════════ FORMULARIO DE CONTACTO (correo / WhatsApp) ═══════════════ */
+let CORREO_INST='iecoyongal@yahoo.com', WHATSAPP_INST='573106152695';
+function enviarMensaje(via){
+  var nom=document.getElementById('fNombre').value.trim(),
+      con=document.getElementById('fCorreo').value.trim(),
+      asu=document.getElementById('fAsunto').value,
+      msg=document.getElementById('fMensaje').value.trim(),
+      box=document.getElementById('formMsg');
+  if(!nom||!msg){ box.className='form-msg err'; box.textContent='Por favor escribe tu nombre y tu mensaje.'; return; }
+  var asunto=asu||'Mensaje desde la página web';
+  var cuerpo='Nombre: '+nom+(con?'\nContacto: '+con:'')+'\nAsunto: '+asunto+'\n\n'+msg;
+  if(via==='whatsapp'){
+    window.open('https://wa.me/'+WHATSAPP_INST+'?text='+encodeURIComponent(cuerpo),'_blank','noopener');
+  } else {
+    location.href='mailto:'+CORREO_INST+'?subject='+encodeURIComponent(asunto)+'&body='+encodeURIComponent(cuerpo);
+  }
+  box.className='form-msg ok';
+  box.textContent='Se abrió '+(via==='whatsapp'?'WhatsApp':'tu correo')+' con el mensaje listo. Recuerda pulsar "Enviar" allí.';
+}
+
+function setMenu(open){
+  var nm=document.getElementById('navMob'),hb=document.getElementById('navHam');
+  if(!nm) return;
+  nm.classList.toggle('open',open);
+  if(hb){ hb.setAttribute('aria-expanded',open); hb.textContent=open?'✕':'☰'; hb.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); }
+}
+function toggleMenu(){setMenu(!document.getElementById('navMob').classList.contains('open'));}
+// al pasar a pantalla grande se cierra el menú móvil
+window.addEventListener('resize',()=>{ if(window.innerWidth>992) setMenu(false); });
+window.addEventListener('scroll',()=>{document.getElementById('btop').classList.toggle('v',window.scrollY>400);});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}});},{threshold:.08});
+document.querySelectorAll('.card,.nivel-card,.stat-box,.val-card,.prin-item,.gov-card,.proy-card,.doc-item,.logo-link,.conv-card,.tl-item,.qs-box').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el);});
+</script>
+</body>
+</html>

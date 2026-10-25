@@ -1,0 +1,159 @@
+# Configuración del panel de administración (Pages CMS — https://app.pagescms.org)
+# Cada sección de "content" aparece como un menú en el panel.
+
+media:
+  - name: imagenes
+    label: Imágenes
+    input: imagenes
+    output: /imagenes
+    categories: [image]
+    rename: safe
+  - name: documentos
+    label: Documentos (PDF)
+    input: documentos
+    output: /documentos
+    categories: [document]
+    rename: safe
+
+content:
+  - name: noticias
+    label: 📰 Noticias
+    type: file
+    path: datos/noticias.json
+    format: json
+    list: true
+    fields:
+      - name: titulo
+        label: Título
+        type: string
+        required: true
+      - name: etiqueta
+        label: Etiqueta (ej. Deporte, Cultura, Formación)
+        type: string
+      - name: descripcion
+        label: Descripción
+        type: text
+      - name: imagen
+        label: Foto
+        type: image
+        options:
+          media: imagenes
+      - name: fecha
+        label: Fecha o pie (ej. "15 de marzo de 2026")
+        type: string
+
+  - name: documentos
+    label: 📂 Documentos Institucionales
+    type: file
+    path: datos/documentos.json
+    format: json
+    list: true
+    fields:
+      - name: nombre
+        label: Nombre del documento
+        type: string
+        required: true
+      - name: archivo
+        label: Archivo PDF (si se deja vacío, aparece "Próximamente")
+        type: file
+        options:
+          media: documentos
+      - name: detalle
+        label: Detalle (ej. "Versión 2026")
+        type: string
+      - name: icono
+        label: Ícono (un emoji, ej. 📋)
+        type: string
+
+  - name: carrusel
+    label: 🖼️ Carrusel de fotos (inicio)
+    type: file
+    path: datos/carrusel.json
+    format: json
+    list: true
+    fields:
+      - name: imagen
+        label: Foto (horizontal)
+        type: image
+        required: true
+        options:
+          media: imagenes
+      - name: descripcion
+        label: Descripción de la foto
+        type: string
+
+  - name: semana-cultural
+    label: 🎉 Semana Cultural
+    type: file
+    path: datos/semana-cultural.json
+    format: json
+    fields:
+      - name: subtitulo
+        label: Texto de presentación
+        type: text
+      - name: fotos
+        label: Fotos
+        type: object
+        list: true
+        fields:
+          - name: imagen
+            label: Foto
+            type: image
+            required: true
+            options:
+              media: imagenes
+          - name: pie
+            label: Pie de foto
+            type: string
+          - name: titulo
+            label: Título de la tarjeta
+            type: string
+          - name: texto
+            label: Texto de la tarjeta
+            type: text
+
+  - name: institucion
+    label: 🏛️ Datos de la institución
+    type: file
+    path: datos/institucion.json
+    format: json
+    fields:
+      - name: rector
+        label: Rector(a)
+        type: string
+      - name: telefono
+        label: Teléfono
+        type: string
+      - name: whatsapp
+        label: WhatsApp (con código de país, solo números, ej. 573106152695)
+        type: string
+      - name: correo
+        label: Correo electrónico
+        type: string
+      - name: horario
+        label: Horario de atención
+        type: string
+      - name: nit
+        label: NIT
+        type: string
+      - name: dane
+        label: Código DANE
+        type: string
+      - name: anios
+        label: Años de historia (ej. 95+)
+        type: string
+      - name: estudiantes
+        label: Número de estudiantes
+        type: string
+      - name: docentes
+        label: Número de docentes
+        type: string
+      - name: matriculas
+        label: Texto del botón de matrículas (ej. Matrículas 2027)
+        type: string
+      - name: facebook
+        label: Enlace de Facebook
+        type: string
+      - name: instagram
+        label: Enlace de Instagram
+        type: string
