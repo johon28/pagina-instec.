@@ -202,6 +202,18 @@ nav.main-nav{background:var(--azul);}
 .doc-item.doc-pend{cursor:default;opacity:.85;}
 .doc-item.doc-pend:hover{transform:none;border-left-color:var(--azul);background:#fff;}
 .doc-soon{display:inline-block;background:#fff4dc;color:#a86d00;border:1px solid #f3d38a;border-radius:10px;padding:1px 8px;font-size:9.5px;font-weight:800;letter-spacing:1px;}
+.docs-grupo{grid-column:1 / -1;display:flex;align-items:center;gap:12px;margin:18px 0 2px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--azul-o);}
+.docs-grupo:first-child{margin-top:0;}
+.docs-grupo::after{content:'';flex:1;height:2px;background:linear-gradient(90deg,var(--dorado),transparent);}
+.docs-grupo span{background:var(--azul);color:#fff;border-radius:12px;padding:1px 9px;font-size:10.5px;letter-spacing:.5px;}
+.doc-item.doc-ok{position:relative;cursor:pointer;}
+.doc-ver{color:inherit;text-decoration:none;}
+.doc-ver::after{content:'';position:absolute;inset:0;}
+.doc-acc{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.doc-acc span,.doc-acc a{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;border-radius:10px;padding:2px 8px;text-decoration:none;}
+.doc-acc .acc-ver{background:#e8f0fe;color:var(--azul);}
+.doc-acc a.acc-desc{position:relative;z-index:1;background:#e8f5e9;color:var(--verde);border:1px solid #c8e6c9;}
+.doc-acc a.acc-desc:hover{background:var(--verde);color:#fff;}
 .docs-nota{margin-top:22px;text-align:center;font-size:13px;color:#667;}
 
 /* ═══════════════════ INFO STRIP ═══════════════════ */
@@ -1464,10 +1476,31 @@ document.getElementById('carousel').addEventListener('touchend',e=>{let d=tx-e.c
 
   cargar('documentos').then(lista=>{
     var grid=document.getElementById('docsGrid');
-    grid.insertAdjacentHTML('afterbegin',lista.map(d=> d.archivo
-      ? '<a href="'+ruta(d.archivo)+'" target="_blank" rel="noopener" class="doc-item"><div class="doc-icon">'+esc(d.icono||'📄')+'</div><div><div class="doc-name">'+esc(d.nombre)+'</div><div class="doc-type">⬇ Descargar'+(d.detalle?' · '+esc(d.detalle):'')+'</div></div></a>'
-      : '<div class="doc-item doc-pend"><div class="doc-icon">'+esc(d.icono||'📄')+'</div><div><div class="doc-name">'+esc(d.nombre)+'</div><div class="doc-type"><span class="doc-soon">PRÓXIMAMENTE</span></div></div></div>'
-    ).join(''));
+    var ext=r=>(String(r||'').split('?')[0].match(/\.([a-z0-9]+)$/i)||[,''])[1].toLowerCase();
+    // Word/Excel/PowerPoint no se ven en el navegador: se abren con el visor en línea de Microsoft
+    var urlVer=r=>{
+      var rel=String(r||'').replace(/^\/+/,'');
+      if(/^(docx?|xlsx?|pptx?)$/.test(ext(rel))) return 'https://view.officeapps.live.com/op/view.aspx?src='+encodeURIComponent(new URL(rel,location.href).href);
+      return rel;
+    };
+    var etiqueta=r=>({doc:'Word',docx:'Word',xls:'Excel',xlsx:'Excel',ppt:'PowerPoint',pptx:'PowerPoint',pdf:'PDF'})[ext(r)]||'archivo';
+    var tarjeta=d=> d.archivo
+      ? '<div class="doc-item doc-ok"><div class="doc-icon">'+esc(d.icono||'📄')+'</div><div>'+
+          '<a class="doc-ver" href="'+esc(urlVer(d.archivo))+'" target="_blank" rel="noopener"><div class="doc-name">'+esc(d.nombre)+'</div></a>'+
+          (d.detalle?'<div class="doc-type">'+esc(d.detalle)+'</div>':'')+
+          '<div class="doc-acc"><span class="acc-ver">👁 Ver</span>'+
+          (d.editable?'<a class="acc-desc" href="'+ruta(d.editable)+'" download>⬇ Descargar '+etiqueta(d.editable)+'</a>':'')+
+        '</div></div></div>'
+      : '<div class="doc-item doc-pend"><div class="doc-icon">'+esc(d.icono||'📄')+'</div><div><div class="doc-name">'+esc(d.nombre)+'</div><div class="doc-type"><span class="doc-soon">PRÓXIMAMENTE</span></div></div></div>';
+    // agrupa conservando el orden en que aparecen en el panel
+    var grupos=[];
+    lista.forEach(d=>{ var g=d.grupo||'Documentos institucionales', x=grupos.find(y=>y[0]===g); if(!x) grupos.push(x=[g,[]]); x[1].push(d); });
+    var html=grupos.map(([g,docs])=>(grupos.length>1?'<div class="docs-grupo">'+esc(g)+' <span>'+docs.length+'</span></div>':'')+docs.map(tarjeta).join('')).join('');
+    grid.insertAdjacentHTML('afterbegin',html);
+    // el enlace al MEN va al final del primer grupo
+    var men=grid.querySelector('a[href*="mineducacion"]');
+    var seg=grid.querySelectorAll('.docs-grupo')[1];
+    if(men&&seg) grid.insertBefore(men,seg);
     var nota=document.querySelector('.docs-nota');
     if(nota && lista.every(d=>d.archivo)) nota.style.display='none';
   }).catch(()=>{});
