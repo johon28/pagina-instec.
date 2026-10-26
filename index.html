@@ -235,7 +235,7 @@ nav.main-nav{background:var(--azul);}
 .inst-logo-block{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#f4f8ff 0%,#eef3fc 100%);border:1px solid #e0e8f6;border-radius:18px;padding:38px 28px;box-shadow:0 10px 30px rgba(21,101,192,.08);position:relative;overflow:hidden;}
 .inst-logo-block::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--azul),var(--dorado));}
 .inst-logo-block img{width:140px;height:140px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(21,101,192,.28));margin-bottom:20px;}
-.inst-logo-block h1{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--azul-o);text-transform:uppercase;letter-spacing:1px;line-height:1.4;margin-bottom:14px;}
+.inst-logo-block .inst-nombre{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--azul-o);text-transform:uppercase;letter-spacing:1px;line-height:1.4;margin-bottom:14px;}
 .inst-logo-block .lema{font-family:'Montserrat',sans-serif;font-size:9.5px;font-weight:700;color:var(--dorado);letter-spacing:2.5px;text-transform:uppercase;padding-top:12px;border-top:1px solid #dbe4f3;width:100%;}
 .inst-text{display:flex;flex-direction:column;justify-content:center;}
 .inst-text h2{font-family:'Montserrat',sans-serif;font-size:clamp(20px,2.6vw,28px);font-weight:800;color:var(--azul-o);margin-bottom:8px;line-height:1.22;}
@@ -257,8 +257,9 @@ nav.main-nav{background:var(--azul);}
 
 /* ═══════════════════ SUB-NAV CONÓCENOS (pestañas internas) ═══════════════════ */
 .subnav{background:#fff;border-bottom:1px solid #e6ebf6;box-shadow:0 2px 12px rgba(21,101,192,.06);}
-.subnav-inner{max-width:1200px;margin:0 auto;padding:0 32px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
-.subnav a{display:inline-flex;align-items:center;gap:7px;padding:16px 18px;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;color:#5a6a85;text-decoration:none;border-bottom:3px solid transparent;transition:all .25s;letter-spacing:.3px;white-space:nowrap;}
+.subnav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;flex-wrap:nowrap;gap:2px;justify-content:safe center;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.subnav-inner::-webkit-scrollbar{display:none;}
+.subnav a{display:inline-flex;align-items:center;gap:7px;padding:16px 14px;flex-shrink:0;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;color:#5a6a85;text-decoration:none;border-bottom:3px solid transparent;transition:all .25s;letter-spacing:.3px;white-space:nowrap;}
 .subnav a:hover{color:var(--azul);background:#f4f8ff;}
 .subnav a.sub-active{color:var(--azul-o);border-bottom-color:var(--dorado);}
 .subnav a .sn-ico{font-size:15px;}
@@ -461,6 +462,107 @@ footer{background:#060f1d;border-top:3px solid var(--dorado);}
 .btop{position:fixed;bottom:24px;right:24px;width:42px;height:42px;background:var(--azul);color:#fff;border:none;border-radius:50%;font-size:17px;cursor:pointer;box-shadow:0 4px 16px rgba(21,101,192,.35);transition:all .3s;z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;}
 .btop.v{opacity:1;pointer-events:all;}
 .btop:hover{background:var(--dorado);transform:translateY(-3px);}
+
+/* ═══════════════════ DISEÑO PREMIUM: PORTADA, ACCESOS Y ENCABEZADOS ═══════════════════ */
+:root{--sombra-suave:0 10px 30px rgba(13,71,161,.10);--sombra-fuerte:0 22px 50px rgba(13,71,161,.20);--radio:16px;}
+
+/* Portada del inicio: carrusel con texto encima */
+.carousel{height:clamp(420px,62vh,600px);}
+.hero-overlay{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(90deg,rgba(6,22,51,.92) 0%,rgba(6,22,51,.72) 38%,rgba(6,22,51,.15) 70%,rgba(6,22,51,0) 100%),linear-gradient(0deg,rgba(6,22,51,.55) 0%,transparent 35%);}
+.hero-content{position:absolute;inset:0;z-index:4;display:flex;align-items:center;pointer-events:none;}
+.hero-content .wrap{width:100%;}
+.hero-text{max-width:560px;color:#fff;pointer-events:auto;padding-bottom:40px;}
+.hero-kicker{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--dorado);margin-bottom:14px;}
+.hero-kicker::before{content:'';width:28px;height:2px;background:var(--dorado);}
+.hero-text h1{font-family:'Montserrat',sans-serif;font-size:clamp(30px,4.4vw,54px);font-weight:900;line-height:1.05;margin-bottom:16px;text-shadow:0 4px 18px rgba(0,0,0,.35);}
+.hero-text h1 span{display:block;color:var(--dorado);}
+.hero-lema{font-size:clamp(14px,1.4vw,17px);line-height:1.6;color:rgba(255,255,255,.88);font-style:italic;margin-bottom:26px;max-width:470px;}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;}
+.btn-hero{display:inline-flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:14px 26px;border-radius:40px;text-decoration:none;transition:all .3s;}
+.btn-hero.primario{background:var(--dorado);color:var(--azul-o);box-shadow:0 10px 26px rgba(249,168,37,.4);}
+.btn-hero.primario:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(249,168,37,.5);}
+.btn-hero.secundario{border:2px solid rgba(255,255,255,.7);color:#fff;backdrop-filter:blur(6px);background:rgba(255,255,255,.08);}
+.btn-hero.secundario:hover{background:#fff;color:var(--azul-o);}
+.hero .cbtn{top:auto;bottom:86px;transform:none;width:44px;height:44px;font-size:16px;}
+.hero .cprev{left:auto;right:84px;}
+.hero .cnext{right:28px;}
+.hero .cdots{bottom:102px;left:auto;right:144px;transform:none;}
+.hero .slide-counter{display:none;}
+
+/* Accesos rápidos (se superponen a la portada) */
+.accesos{position:relative;z-index:6;margin-top:-62px;padding-bottom:20px;}
+.accesos-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;}
+.acceso{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;background:#fff;border-radius:var(--radio);padding:22px 12px 18px;text-decoration:none;box-shadow:var(--sombra-suave);border-bottom:3px solid transparent;transition:all .3s;}
+.acceso:hover{transform:translateY(-6px);box-shadow:var(--sombra-fuerte);border-bottom-color:var(--dorado);}
+.acceso-ico{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;background:linear-gradient(135deg,#e8f0fe,#d6e4ff);transition:transform .3s;}
+.acceso:hover .acceso-ico{transform:scale(1.08) rotate(-4deg);}
+.acceso strong{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--azul-o);}
+.acceso small{font-size:11.5px;color:#7a869e;line-height:1.4;}
+
+/* Ritmo de secciones del inicio */
+#inicio .inst-strip{padding-top:56px;}
+#inicio > section,#inicio > div{scroll-margin-top:90px;}
+
+/* Encabezado de cada página interna */
+.page-hero{position:relative;overflow:hidden;color:#fff;padding:78px 0 70px;background-color:var(--azul-o);background-size:cover;background-position:center;border-bottom:4px solid var(--dorado);}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(6,22,51,.94) 0%,rgba(13,71,161,.82) 55%,rgba(13,71,161,.55) 100%);}
+.page-hero::after{content:'';position:absolute;right:-80px;bottom:-120px;width:340px;height:340px;border-radius:50%;border:40px solid rgba(249,168,37,.10);}
+.page-hero .wrap{position:relative;z-index:1;}
+.migas{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,.7);margin-bottom:16px;}
+.migas a{color:rgba(255,255,255,.85);text-decoration:none;}
+.migas a:hover{color:var(--dorado);}
+.migas b{color:var(--dorado);font-weight:800;}
+.page-hero .ph-kicker{display:inline-block;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--dorado);margin-bottom:8px;}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.1;margin-bottom:12px;}
+.page-hero p{max-width:660px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.85);}
+.page-hero .ph-line{width:70px;height:4px;border-radius:2px;background:linear-gradient(90deg,var(--dorado),#fff);margin:16px 0 0;}
+.page-hero + .subnav{position:sticky;top:var(--alto-cabecera,0px);z-index:50;}
+
+/* Sedes: resumen en cifras */
+.sedes-resumen{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px;}
+.sr-box{background:#fff;border-radius:var(--radio);padding:20px;box-shadow:var(--sombra-suave);display:flex;align-items:center;gap:14px;border-left:4px solid var(--azul);}
+.sr-box b{font-family:'Montserrat',sans-serif;font-size:30px;font-weight:900;color:var(--azul-o);line-height:1;}
+.sr-box span{font-size:12px;font-weight:700;color:#6b778f;text-transform:uppercase;letter-spacing:1px;line-height:1.35;}
+.sr-box.mapa{border-left-color:var(--dorado);text-decoration:none;justify-content:center;transition:all .3s;}
+.sr-box.mapa:hover{transform:translateY(-4px);box-shadow:var(--sombra-fuerte);}
+.sr-box.mapa span{color:var(--azul-o);font-size:12.5px;}
+
+@media(max-width:992px){
+  .hero-overlay{background:linear-gradient(90deg,rgba(6,22,51,.9) 0%,rgba(6,22,51,.6) 60%,rgba(6,22,51,.2) 100%);}
+  .hero-text{max-width:460px;padding-bottom:30px;}
+  .hero .carousel{height:clamp(440px,60vw,520px);aspect-ratio:auto;}
+  .hero .cbtn{bottom:58px;width:38px;height:38px;font-size:14px;}
+  .hero .cprev{right:66px;}
+  .hero .cnext{right:20px;}
+  .hero .cdots{bottom:72px;right:116px;}
+  .accesos{margin-top:-40px;}
+  .accesos-grid{grid-template-columns:repeat(3,1fr);gap:12px;}
+  .page-hero{padding:56px 0 50px;}
+  .sedes-resumen{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:600px){
+  /* en teléfono el texto de la portada va debajo de la foto */
+  .hero-overlay{display:none;}
+  .hero-content{position:static;display:block;background:linear-gradient(160deg,#061633,#0D47A1);padding:26px 0 74px;}
+  .hero-text{max-width:none;padding:0;}
+  .hero-text h1{font-size:30px;}
+  .hero-lema{font-size:14px;margin-bottom:20px;}
+  .btn-hero{padding:12px 20px;font-size:11px;}
+  .hero .carousel{height:auto;aspect-ratio:2/1;}
+  .hero .cbtn{bottom:10px;width:32px;height:32px;font-size:13px;}
+  .hero .cprev{right:52px;}
+  .hero .cnext{right:12px;}
+  .hero .cdots{bottom:20px;right:auto;left:16px;}
+  .accesos{margin-top:-52px;}
+  .accesos-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .acceso{padding:16px 8px 14px;}
+  .acceso small{display:none;}
+  .page-hero{padding:40px 0 36px;}
+  .page-hero p{font-size:14px;}
+  .page-hero::after{display:none;}
+  .sr-box{padding:14px;}
+  .sr-box b{font-size:24px;}
+}
 
 /* ═══════════════════ RESPONSIVE ═══════════════════
    ≤1200 portátil · ≤992 tablet (menú hamburguesa) · ≤600 teléfono · ≤380 teléfono pequeño */
@@ -714,8 +816,122 @@ img,video{max-width:100%;}
     <button class="cbtn cnext" onclick="moveC(1)" aria-label="Foto siguiente">&#8594;</button>
     <div class="cdots" id="cdots"></div>
     <div class="slide-counter" id="slideCounter"></div>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="wrap">
+      <div class="hero-text">
+        <span class="hero-kicker">Institución oficial · Magangué, Bolívar</span>
+        <h1>Institución Educativa <span>de Coyongal</span></h1>
+        <p class="hero-lema">«Valores como principio, Disciplina como base y Progreso como fin». Educación rural de calidad desde 1929.</p>
+        <div class="hero-btns">
+          <a href="#" onclick="return goPage('contacto')" class="btn-hero primario">📋 <span data-dato="matriculas">Matrículas 2026</span></a>
+          <a href="#" onclick="return goPage('conocenos')" class="btn-hero secundario">Conócenos →</a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<!-- ACCESOS RÁPIDOS -->
+<div class="accesos">
+  <div class="wrap">
+    <div class="accesos-grid">
+      <a href="#" onclick="return goPage('contacto')" class="acceso"><span class="acceso-ico">📋</span><strong>Matrículas</strong><small>Información y requisitos</small></a>
+      <a href="#" onclick="return goPage('inicio','oferta')" class="acceso"><span class="acceso-ico">🎓</span><strong>Oferta académica</strong><small>De preescolar a media</small></a>
+      <a href="#" onclick="return goPage('documentos')" class="acceso"><span class="acceso-ico">📂</span><strong>Documentos</strong><small>PEI, Manual, SIEE y formatos</small></a>
+      <a href="#" onclick="return goPage('sedes')" class="acceso"><span class="acceso-ico">📍</span><strong>Nuestras sedes</strong><small>10 sedes rurales</small></a>
+      <a href="#" onclick="return goPage('inicio','enlaces')" class="acceso"><span class="acceso-ico">💻</span><strong>Plataformas</strong><small>Edusac y recursos digitales</small></a>
+      <a href="#" onclick="return goPage('contacto')" class="acceso"><span class="acceso-ico">✉️</span><strong>Contacto</strong><small>Escríbenos o llámanos</small></a>
+    </div>
+  </div>
+</div>
+
+<!-- INFORMACIÓN INSTITUCIONAL (clean) -->
+<div class="inst-strip">
+  <div class="wrap">
+    <div class="inst-intro">
+      <div class="inst-logo-block">
+        <img src="imagenes/escudo.png" alt="Escudo INSTEC">
+        <div class="inst-nombre">Institución Educativa<br>de Coyongal</div>
+        <div class="lema">✦ Valores · Disciplina · Progreso ✦</div>
+      </div>
+      <div class="inst-text">
+        <h2>Educación Rural de Calidad<br>desde el Corazón de Bolívar</h2>
+        <div class="inst-rule"></div>
+        <p>La <strong>Institución Educativa de Coyongal – INSTEC</strong> es una institución oficial ubicada en el corregimiento de Coyongal, a orillas del río Magdalena, a 12 km de Magangué, Bolívar. Con más de 95 años de historia, forma integralmente a niños, niñas y jóvenes rurales en los niveles de preescolar, básica primaria, básica secundaria y media académica.</p>
+        <p>Adoptamos el enfoque pedagógico <strong>CRESE</strong> (Ciudadanía, Reconciliación, Educación Socioemocional, Antirracismo y Cambio Climático), promoviendo una educación que trasciende el aula y transforma comunidades, con un firme compromiso por la formación integral de nuestros estudiantes y egresados.</p>
+        <div class="inst-badges">
+          <span class="badge">🏛️ Oficial</span>
+          <span class="badge">📅 Calendario A</span>
+          <span class="badge">🎓 Bachiller Académico</span>
+          <span class="badge">🌿 Enfoque CRESE</span>
+          <span class="badge">♿ Educación Inclusiva</span>
+        </div>
+      </div>
+    </div>
+    <div class="qs-row">
+      <div class="qs-box"><div class="qs-num"><span data-dato="anios">95+</span></div><div class="qs-label">Años de Historia</div></div>
+      <div class="qs-box"><div class="qs-num"><span data-dato="estudiantes">984</span></div><div class="qs-label">Estudiantes Activos</div></div>
+      <div class="qs-box"><div class="qs-num"><span data-dato="docentes">49</span></div><div class="qs-label">Docentes Titulados</div></div>
+      <div class="qs-box"><div class="qs-num">10</div><div class="qs-label">Sedes Educativas</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- OFERTA ACADÉMICA -->
+<section class="sec bg-g" id="oferta">
+  <div class="wrap">
+    <div class="sh">
+      <span class="s-tag">Formación completa</span>
+      <h2 class="s-title">Oferta Académica</h2>
+      <div class="s-line"></div>
+      <p class="s-sub">Jornada matinal · Calendario A · Bachillerato Académico</p>
+    </div>
+    <div class="g4">
+      <div class="nivel-card nc1">
+        <div class="nivel-h"><span class="nivel-em">🎨</span><div class="nivel-gr">Preescolar</div><h3>Preescolar</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Estimulación Temprana</li><li>Pre-lecto-escritura</li><li>Expresión Artística</li>
+            <li>Desarrollo Motriz</li><li>Educación en Valores</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 11:00 a.m. · 20 hrs/semana</div>
+        </div>
+      </div>
+      <div class="nivel-card nc2">
+        <div class="nivel-h"><span class="nivel-em">📖</span><div class="nivel-gr">Grados 1° a 5°</div><h3>Básica Primaria</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Matemáticas</li><li>Lengua Castellana</li><li>Ciencias Naturales</li>
+            <li>Ciencias Sociales</li><li>Tecnología e Informática</li><li>Artística y Ed. Física</li><li>Inglés</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 12:00 p.m. · 25 hrs/semana</div>
+        </div>
+      </div>
+      <div class="nivel-card nc3">
+        <div class="nivel-h"><span class="nivel-em">🔬</span><div class="nivel-gr">Grados 6° a 9°</div><h3>Básica Secundaria</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Álgebra, Geometría y Estadística</li><li>Inglés</li><li>Física y Química</li>
+            <li>Historia, Geografía y Democracia</li><li>Tecnología e Informática</li><li>Ética y Valores</li><li>Educación Religiosa</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 1:00 p.m. · 30 hrs/semana</div>
+        </div>
+      </div>
+      <div class="nivel-card nc4">
+        <div class="nivel-h"><span class="nivel-em">🎓</span><div class="nivel-gr">Grados 10° y 11°</div><h3>Media Académica</h3></div>
+        <div class="nivel-b">
+          <ul>
+            <li>Cálculo y Estadística</li><li>Filosofía</li><li>Inglés Avanzado</li>
+            <li>Emprendimiento</li><li>Ciencias Políticas y Económicas</li><li>Proyecto de Vida</li>
+          </ul>
+          <div class="nivel-horario">⏰ 7:00 a.m. – 1:00 p.m. · 30 hrs/semana · Título Bachiller</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- NOTICIAS / ACTIVIDADES / EVENTOS -->
 <section class="news-sec" id="noticias">
@@ -777,46 +993,6 @@ img,video{max-width:100%;}
   </div>
 </section>
 
-<!-- INFO STRIP -->
-<div class="info-strip">
-  <div class="info-item"><span class="ii-icon">👤</span><div><div class="ii-label">Rector</div><div class="ii-val"><span data-dato="rector">Robin Jhair Piñeres Retamoza</span></div></div></div>
-  <a href="https://www.google.com/maps/place/Coyongal,+Magangu%C3%A9,+Bol%C3%ADvar,+Colombia/@8.9221015,-74.49207,16z/data=!3m1!4b1!4m6!3m5!1s0x8e5e9e9d54bde3b7:0xa496bacc24df1fc6!8m2!3d8.920237!4d-74.4909152!16s%2Fg%2F1hhwmnxwt" target="_blank" rel="noopener" class="info-item info-link" title="Ver ubicación de Coyongal en Google Maps"><span class="ii-icon">📍</span><div><div class="ii-label">Ubicación</div><div class="ii-val">Coyongal, Magangué – Bolívar</div></div></a>
-  <div class="info-item"><span class="ii-icon">🏫</span><div><div class="ii-label">Estudiantes · Sedes</div><div class="ii-val"><span data-dato="estudiantes">984</span> estudiantes · 10 sedes</div></div></div>
-  <div class="info-item"><span class="ii-icon">📞</span><div><div class="ii-label">Teléfono</div><div class="ii-val"><span data-dato="telefono">310-615-2695</span></div></div></div>
-</div>
-
-<!-- INFORMACIÓN INSTITUCIONAL (clean) -->
-<div class="inst-strip">
-  <div class="wrap">
-    <div class="inst-intro">
-      <div class="inst-logo-block">
-        <img src="imagenes/escudo.png" alt="Escudo INSTEC">
-        <h1>Institución Educativa<br>de Coyongal</h1>
-        <div class="lema">✦ Valores · Disciplina · Progreso ✦</div>
-      </div>
-      <div class="inst-text">
-        <h2>Educación Rural de Calidad<br>desde el Corazón de Bolívar</h2>
-        <div class="inst-rule"></div>
-        <p>La <strong>Institución Educativa de Coyongal – INSTEC</strong> es una institución oficial ubicada en el corregimiento de Coyongal, a orillas del río Magdalena, a 12 km de Magangué, Bolívar. Con más de 95 años de historia, forma integralmente a niños, niñas y jóvenes rurales en los niveles de preescolar, básica primaria, básica secundaria y media académica.</p>
-        <p>Adoptamos el enfoque pedagógico <strong>CRESE</strong> (Ciudadanía, Reconciliación, Educación Socioemocional, Antirracismo y Cambio Climático), promoviendo una educación que trasciende el aula y transforma comunidades, con un firme compromiso por la formación integral de nuestros estudiantes y egresados.</p>
-        <div class="inst-badges">
-          <span class="badge">🏛️ Oficial</span>
-          <span class="badge">📅 Calendario A</span>
-          <span class="badge">🎓 Bachiller Académico</span>
-          <span class="badge">🌿 Enfoque CRESE</span>
-          <span class="badge">♿ Educación Inclusiva</span>
-        </div>
-      </div>
-    </div>
-    <div class="qs-row">
-      <div class="qs-box"><div class="qs-num"><span data-dato="anios">95+</span></div><div class="qs-label">Años de Historia</div></div>
-      <div class="qs-box"><div class="qs-num"><span data-dato="estudiantes">984</span></div><div class="qs-label">Estudiantes Activos</div></div>
-      <div class="qs-box"><div class="qs-num"><span data-dato="docentes">49</span></div><div class="qs-label">Docentes Titulados</div></div>
-      <div class="qs-box"><div class="qs-num">10</div><div class="qs-label">Sedes Educativas</div></div>
-    </div>
-  </div>
-</div>
-
 <!-- RECURSOS Y PLATAFORMAS (clean, homepage) -->
 <div class="enlaces-home" id="enlaces">
   <div class="wrap">
@@ -845,18 +1021,29 @@ img,video{max-width:100%;}
     </div>
   </div>
 </div>
+<!-- FRANJA DE CIERRE: DATOS DE CONTACTO -->
+<div class="info-strip">
+  <div class="info-item"><span class="ii-icon">👤</span><div><div class="ii-label">Rector</div><div class="ii-val"><span data-dato="rector">Robin Jhair Piñeres Retamoza</span></div></div></div>
+  <a href="https://www.google.com/maps/place/Coyongal,+Magangu%C3%A9,+Bol%C3%ADvar,+Colombia/@8.9221015,-74.49207,16z/data=!3m1!4b1!4m6!3m5!1s0x8e5e9e9d54bde3b7:0xa496bacc24df1fc6!8m2!3d8.920237!4d-74.4909152!16s%2Fg%2F1hhwmnxwt" target="_blank" rel="noopener" class="info-item info-link" title="Ver ubicación de Coyongal en Google Maps"><span class="ii-icon">📍</span><div><div class="ii-label">Ubicación</div><div class="ii-val">Coyongal, Magangué – Bolívar</div></div></a>
+  <div class="info-item"><span class="ii-icon">🏫</span><div><div class="ii-label">Estudiantes · Sedes</div><div class="ii-val"><span data-dato="estudiantes">984</span> estudiantes · 10 sedes</div></div></div>
+  <div class="info-item"><span class="ii-icon">📞</span><div><div class="ii-label">Teléfono</div><div class="ii-val"><span data-dato="telefono">310-615-2695</span></div></div></div>
+</div>
+
 </section>
 <!-- ═══════════ FIN SECCIÓN INICIO ═══════════ -->
 <!-- ======= CONÓCENOS / MISION / VISION ======= -->
+<div class="page-hero" data-page="conocenos" style="background-image:url('imagenes/banner-comunidad-estudiantes.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <a href="#" onclick="return goPage('conocenos')">Conócenos</a> › <b>Identidad Institucional</b></nav>
+    <span class="ph-kicker">Conócenos</span>
+    <h1>Identidad Institucional</h1>
+    <p>La INSTEC es una institución de carácter oficial ubicada a la margen derecha del río Magdalena, a 12 km de Magangué, comprometida con la educación rural de calidad.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <div class="subnav" data-page="conocenos"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class="sub-active"><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
 <section class="sec bg-w" id="conocenos" data-page="conocenos">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Identidad Institucional</span>
-      <h2 class="s-title">Conócenos</h2>
-      <div class="s-line"></div>
-      <p class="s-sub">La INSTEC es una institución de carácter oficial ubicada a la margen derecha del río Magdalena, a 12 km de Magangué, comprometida con la educación rural de calidad.</p>
-    </div>
     <div class="g2">
       <div>
         <div id="mision" style="margin-bottom:32px;">
@@ -882,14 +1069,18 @@ img,video{max-width:100%;}
 </section>
 
 <!-- HISTORIA -->
+<div class="page-hero" data-page="historia" style="background-image:url('imagenes/carrusel-1-semana-cultural.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <a href="#" onclick="return goPage('conocenos')">Conócenos</a> › <b>Reseña Histórica</b></nav>
+    <span class="ph-kicker">Desde 1929</span>
+    <h1>Reseña Histórica</h1>
+    <p>Casi un siglo formando generaciones en Coyongal, a orillas del río Magdalena: de escuela privada en casas de maestros a institución educativa con 10 sedes.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <div class="subnav" data-page="historia"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class="sub-active"><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
 <section class="sec bg-g" id="historia" data-page="historia">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Desde 1929</span>
-      <h2 class="s-title">Reseña Histórica</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="g2">
       <div class="hist-box">
         <p>La INSTEC inició sus labores como escuela privada en <strong>1929</strong>. Las familias pagaban a personas con formación básica para enseñar a leer, escribir y las cuatro operaciones. La escuela funcionaba en las casas de los docentes. Entre los primeros maestros se destacaron <em>Enrique Larios, Pablo Cañas, Felicita Pabuena, Martín De León y Maximiliano Peña</em>.</p>
@@ -911,14 +1102,18 @@ img,video{max-width:100%;}
 </section>
 
 <!-- PRINCIPIOS -->
+<div class="page-hero" data-page="principios" style="background-image:url('imagenes/banner-modelo-crese.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <a href="#" onclick="return goPage('conocenos')">Conócenos</a> › <b>Principios Institucionales</b></nav>
+    <span class="ph-kicker">Pilares filosóficos</span>
+    <h1>Principios Institucionales</h1>
+    <p>Las ideas que orientan cada decisión pedagógica y la convivencia en nuestra comunidad educativa.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <div class="subnav" data-page="principios"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class="sub-active"><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
 <section class="sec bg-w" id="principios" data-page="principios">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Pilares filosóficos</span>
-      <h2 class="s-title">Principios Institucionales</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="prin-g">
       <div class="prin-item"><div class="prin-num">1</div><div class="prin-text"><h4>Dignidad Humana</h4><p>Toda persona posee un valor intrínseco. Formamos seres conscientes de su valor, solidarios y capaces de reconocer la dignidad de los demás.</p></div></div>
       <div class="prin-item"><div class="prin-num">2</div><div class="prin-text"><h4>Equidad</h4><p>Garantizamos igualdad de oportunidades valorando las diferencias individuales y culturales, propiciando ambientes inclusivos donde la diversidad es riqueza.</p></div></div>
@@ -937,14 +1132,18 @@ img,video{max-width:100%;}
 </section>
 
 <!-- VALORES -->
+<div class="page-hero" data-page="valores" style="background-image:url('imagenes/semana-cultural-desfile.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <a href="#" onclick="return goPage('conocenos')">Conócenos</a> › <b>Valores Institucionales</b></nav>
+    <span class="ph-kicker">Nuestro carácter</span>
+    <h1>Valores Institucionales</h1>
+    <p>El sello que distingue a cada estudiante, docente y familia de la INSTEC.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <div class="subnav" data-page="valores"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class="sub-active"><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
 <section class="sec bg-b" id="valores" data-page="valores">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag g">Nuestro carácter</span>
-      <h2 class="s-title w">Valores Institucionales</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="val-g">
       <div class="val-card"><div class="val-n">01</div><div class="val-icon">⚖️</div><h4>Respeto</h4><p>Reconocemos y valoramos al otro, aceptando diferencias culturales y personales. Buen trato, escucha activa y sana convivencia entre todos.</p></div>
       <div class="val-card"><div class="val-n">02</div><div class="val-icon">✅</div><h4>Responsabilidad</h4><p>Cumplimos los deberes académicos y sociales con compromiso y puntualidad. Cada estudiante es consciente de las consecuencias de sus actos.</p></div>
@@ -959,68 +1158,18 @@ img,video{max-width:100%;}
   </div>
 </section>
 
-<!-- OFERTA ACADÉMICA -->
-<section class="sec bg-g" id="oferta" data-page="inicio">
-  <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Formación completa</span>
-      <h2 class="s-title">Oferta Académica</h2>
-      <div class="s-line"></div>
-      <p class="s-sub">Jornada matinal · Calendario A · Bachillerato Académico</p>
-    </div>
-    <div class="g4">
-      <div class="nivel-card nc1">
-        <div class="nivel-h"><span class="nivel-em">🎨</span><div class="nivel-gr">Preescolar</div><h3>Preescolar</h3></div>
-        <div class="nivel-b">
-          <ul>
-            <li>Estimulación Temprana</li><li>Pre-lecto-escritura</li><li>Expresión Artística</li>
-            <li>Desarrollo Motriz</li><li>Educación en Valores</li>
-          </ul>
-          <div class="nivel-horario">⏰ 7:00 a.m. – 11:00 a.m. · 20 hrs/semana</div>
-        </div>
-      </div>
-      <div class="nivel-card nc2">
-        <div class="nivel-h"><span class="nivel-em">📖</span><div class="nivel-gr">Grados 1° a 5°</div><h3>Básica Primaria</h3></div>
-        <div class="nivel-b">
-          <ul>
-            <li>Matemáticas</li><li>Lengua Castellana</li><li>Ciencias Naturales</li>
-            <li>Ciencias Sociales</li><li>Tecnología e Informática</li><li>Artística y Ed. Física</li><li>Inglés</li>
-          </ul>
-          <div class="nivel-horario">⏰ 7:00 a.m. – 12:00 p.m. · 25 hrs/semana</div>
-        </div>
-      </div>
-      <div class="nivel-card nc3">
-        <div class="nivel-h"><span class="nivel-em">🔬</span><div class="nivel-gr">Grados 6° a 9°</div><h3>Básica Secundaria</h3></div>
-        <div class="nivel-b">
-          <ul>
-            <li>Álgebra, Geometría y Estadística</li><li>Inglés</li><li>Física y Química</li>
-            <li>Historia, Geografía y Democracia</li><li>Tecnología e Informática</li><li>Ética y Valores</li><li>Educación Religiosa</li>
-          </ul>
-          <div class="nivel-horario">⏰ 7:00 a.m. – 1:00 p.m. · 30 hrs/semana</div>
-        </div>
-      </div>
-      <div class="nivel-card nc4">
-        <div class="nivel-h"><span class="nivel-em">🎓</span><div class="nivel-gr">Grados 10° y 11°</div><h3>Media Académica</h3></div>
-        <div class="nivel-b">
-          <ul>
-            <li>Cálculo y Estadística</li><li>Filosofía</li><li>Inglés Avanzado</li>
-            <li>Emprendimiento</li><li>Ciencias Políticas y Económicas</li><li>Proyecto de Vida</li>
-          </ul>
-          <div class="nivel-horario">⏰ 7:00 a.m. – 1:00 p.m. · 30 hrs/semana · Título Bachiller</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- MODELO PEDAGÓGICO -->
+<div class="page-hero" data-page="modelo" style="background-image:url('imagenes/banner-niveles-preescolar-media.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <b>Modelo Pedagógico</b></nav>
+    <span class="ph-kicker">Enfoque educativo</span>
+    <h1>Modelo Pedagógico</h1>
+    <p>Una pedagogía activa, constructivista y por competencias, orientada por la educación CRESE y contextualizada al territorio rural.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <section class="sec bg-w" id="modelo" data-page="modelo">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Enfoque educativo</span>
-      <h2 class="s-title">Modelo Pedagógico</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="mod-g">
       <div>
         <span style="display:inline-block;background:var(--dorado);color:var(--azul-o);font-family:Montserrat,sans-serif;font-size:10px;font-weight:800;letter-spacing:2px;padding:4px 14px;border-radius:2px;margin-bottom:16px;">🔬 Constructivismo Social Activo</span>
@@ -1078,15 +1227,18 @@ img,video{max-width:100%;}
 </section>
 
 <!-- GOBIERNO ESCOLAR -->
+<div class="page-hero" data-page="gobierno" style="background-image:url('imagenes/noticia-personeria-2026.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <a href="#" onclick="return goPage('conocenos')">Conócenos</a> › <b>Gobierno Escolar</b></nav>
+    <span class="ph-kicker">Democracia escolar</span>
+    <h1>Gobierno Escolar</h1>
+    <p>La INSTEC cuenta con tres órganos de gobierno escolar y múltiples espacios de participación democrática de la comunidad educativa.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <div class="subnav" data-page="gobierno"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class=""><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class="sub-active"><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
 <section class="sec bg-w" id="gobierno" data-page="gobierno">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Democracia escolar</span>
-      <h2 class="s-title">Gobierno Escolar</h2>
-      <div class="s-line"></div>
-      <p class="s-sub">La INSTEC cuenta con tres órganos de gobierno escolar y múltiples espacios de participación democrática de la comunidad educativa.</p>
-    </div>
     <div class="gov-g">
       <div class="gov-card">
         <div class="gov-top"><span class="gov-icon">🏛️</span><h4>Consejo Directivo</h4></div>
@@ -1117,14 +1269,18 @@ img,video{max-width:100%;}
 </section>
 
 <!-- SÍMBOLOS INSTITUCIONALES -->
+<div class="page-hero" data-page="simbolos" style="background-image:url('imagenes/carrusel-3-graduacion.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <a href="#" onclick="return goPage('conocenos')">Conócenos</a> › <b>Símbolos Institucionales</b></nav>
+    <span class="ph-kicker">Identidad INSTEC</span>
+    <h1>Símbolos Institucionales</h1>
+    <p>El escudo, la bandera, el lema y el himno que representan nuestra historia y nuestro territorio.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <div class="subnav" data-page="simbolos"><div class="subnav-inner"><a href="#" onclick="return goPage('conocenos')" class=""><span class="sn-ico">🏛️</span>Identidad</a><a href="#" onclick="return goPage('conocenos','mision')" class=""><span class="sn-ico">🎯</span>Misión y Visión</a><a href="#" onclick="return goPage('historia')" class=""><span class="sn-ico">📜</span>Reseña Histórica</a><a href="#" onclick="return goPage('principios')" class=""><span class="sn-ico">⚖️</span>Principios</a><a href="#" onclick="return goPage('valores')" class=""><span class="sn-ico">💎</span>Valores</a><a href="#" onclick="return goPage('simbolos')" class="sub-active"><span class="sn-ico">🛡️</span>Símbolos</a><a href="#" onclick="return goPage('gobierno')" class=""><span class="sn-ico">👥</span>Gobierno Escolar</a></div></div>
 <section class="sec bg-g" id="simbolos" data-page="simbolos">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Identidad INSTEC</span>
-      <h2 class="s-title">Símbolos Institucionales</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="g2" style="gap:32px;margin-bottom:48px;">
       <div class="info-card" style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 4px 20px rgba(21,101,192,.08);">
         <h3 style="font-family:Montserrat,sans-serif;font-size:18px;font-weight:800;color:#0D47A1;margin-bottom:18px;">🛡️ El Escudo</h3><div style="display:flex;gap:24px;align-items:center;margin-bottom:18px;flex-wrap:wrap;"><div style="flex-shrink:0;background:linear-gradient(135deg,#f4f8ff,#eef3fc);border:1px solid rgba(21,101,192,.15);border-radius:14px;padding:12px;box-shadow:0 6px 22px rgba(21,101,192,.14);"><img src="imagenes/escudo-simbolos.jpg" alt="Escudo de la Institución Educativa de Coyongal" style="display:block;width:150px;height:auto;border-radius:8px;"></div><div style="flex:1;min-width:200px;">
@@ -1171,13 +1327,22 @@ img,video{max-width:100%;}
 </section>
 
 <!-- SEDES -->
+<div class="page-hero" data-page="sedes" style="background-image:url('imagenes/banner-sedes-rurales.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <b>Nuestras Sedes</b></nav>
+    <span class="ph-kicker">Presencia rural</span>
+    <h1>Nuestras Sedes</h1>
+    <p>La INSTEC tiene presencia en el corregimiento de Coyongal y sus veredas aledañas. Siete sedes funcionan en modalidad multigrado y tres en modalidad unigrado.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <section class="sec bg-w" id="sedes" data-page="sedes">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">10 sedes</span>
-      <h2 class="s-title">Nuestras Sedes</h2>
-      <div class="s-line"></div>
-      <p class="s-sub">La INSTEC tiene presencia en el corregimiento de Coyongal y sus veredas aledañas. Siete sedes funcionan en modalidad multigrado y tres en modalidad unigrado.</p>
+    <div class="sedes-resumen">
+      <div class="sr-box"><b>10</b><span>Sedes<br>educativas</span></div>
+      <div class="sr-box"><b>3</b><span>Sedes<br>unigrado</span></div>
+      <div class="sr-box"><b>7</b><span>Sedes<br>multigrado</span></div>
+      <a class="sr-box mapa" href="https://www.google.com/maps/place/Coyongal,+Magangu%C3%A9,+Bol%C3%ADvar,+Colombia/@8.9221015,-74.49207,16z" target="_blank" rel="noopener"><b>📍</b><span>Ver Coyongal<br>en el mapa</span></a>
     </div>
     <div style="overflow-x:auto;">
       <table class="sedes-table">
@@ -1201,28 +1366,18 @@ img,video{max-width:100%;}
   </div>
 </section>
 
-<!-- CONVENIOS -->
-<section class="sec bg-g" id="convenios" data-page="egresados">
-  <div class="wrap">
-    <div class="sh">
-      <span class="s-tag gr">Alianzas estratégicas</span>
-      <h2 class="s-title">Convenios Institucionales</h2>
-      <div class="s-line"></div>
-    </div>
-    <div class="conv-g">
-      <div class="conv-card" style="border-left-color:#7B1FA2;"><div class="conv-icon">♿</div><div class="conv-text"><h4>CORPIDER – Educación Inclusiva</h4><p>Convenio para atender a la población con necesidades educativas especiales. Se elaboran PIAR individualizados y se realizan campañas de capacitación y acompañamiento a docentes.</p></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- EGRESADOS -->
+<div class="page-hero" data-page="egresados" style="background-image:url('imagenes/carrusel-2-cultura.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <b>Egresados</b></nav>
+    <span class="ph-kicker">Orgullo INSTEC</span>
+    <h1>Egresados</h1>
+    <p>Bachilleres formados con valores, disciplina y visión de progreso, comprometidos con el desarrollo de su comunidad.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <section class="sec bg-w" id="egresados" data-page="egresados">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag">Orgullo INSTEC</span>
-      <h2 class="s-title">Perfil del Egresado</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="g2">
       <div class="info-card" style="background:#fff;border-radius:8px;padding:32px;box-shadow:0 4px 20px rgba(21,101,192,.08);border-left:5px solid var(--dorado);">
         <h3 style="font-family:Montserrat,sans-serif;font-size:18px;font-weight:800;color:#0D47A1;margin-bottom:14px;">¿Quién es el Egresado INSTEC?</h3>
@@ -1245,14 +1400,32 @@ img,video{max-width:100%;}
   </div>
 </section>
 
-<!-- DOCUMENTOS -->
-<section class="sec bg-g" id="documentos" data-page="documentos">
+<!-- CONVENIOS -->
+<section class="sec bg-g" id="convenios" data-page="egresados">
   <div class="wrap">
     <div class="sh">
-      <span class="s-tag">Transparencia</span>
-      <h2 class="s-title">Documentos Institucionales</h2>
+      <span class="s-tag gr">Alianzas estratégicas</span>
+      <h2 class="s-title">Convenios Institucionales</h2>
       <div class="s-line"></div>
     </div>
+    <div class="conv-g">
+      <div class="conv-card" style="border-left-color:#7B1FA2;"><div class="conv-icon">♿</div><div class="conv-text"><h4>CORPIDER – Educación Inclusiva</h4><p>Convenio para atender a la población con necesidades educativas especiales. Se elaboran PIAR individualizados y se realizan campañas de capacitación y acompañamiento a docentes.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS -->
+<div class="page-hero" data-page="documentos" style="background-image:url('imagenes/noticia-capacitaciones-docentes.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <b>Documentos Institucionales</b></nav>
+    <span class="ph-kicker">Transparencia</span>
+    <h1>Documentos Institucionales</h1>
+    <p>Consulta en línea el PEI, el Manual de Convivencia, el SIEE y los formatos institucionales para docentes.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
+<section class="sec bg-g" id="documentos" data-page="documentos">
+  <div class="wrap">
     <div class="docs-g" id="docsGrid">
       <a href="https://www.mineducacion.gov.co" target="_blank" class="doc-item"><div class="doc-icon">🇨🇴</div><div><div class="doc-name">Normatividad MEN</div><div class="doc-type">Enlace externo · MEN</div></div></a>
     </div>
@@ -1261,13 +1434,17 @@ img,video{max-width:100%;}
 </section>
 
 <!-- CONTACTO -->
+<div class="page-hero" data-page="contacto" style="background-image:url('imagenes/carrusel-4-juegos-intercursos.jpg')">
+  <div class="wrap">
+    <nav class="migas" aria-label="Ruta"><a href="#" onclick="return goPage('inicio')">Inicio</a> › <b>Contáctenos</b></nav>
+    <span class="ph-kicker">Estamos para servirle</span>
+    <h1>Contáctenos</h1>
+    <p>Escríbenos, llámanos o visítanos. Con gusto atendemos a padres de familia, estudiantes, egresados y comunidad.</p>
+    <div class="ph-line"></div>
+  </div>
+</div>
 <section class="sec bg-b" id="contacto" data-page="contacto">
   <div class="wrap">
-    <div class="sh">
-      <span class="s-tag g">Estamos para servirle</span>
-      <h2 class="s-title w">Contáctenos</h2>
-      <div class="s-line"></div>
-    </div>
     <div class="ct-g">
       <div class="ct-info">
         <h3>Información Oficial</h3>
@@ -1387,6 +1564,10 @@ function goPage(page, anchor){
   });
   // pausar el video de tambora al salir de inicio
   if(page!=='inicio' && window.resetVideos) resetVideos();
+  // en pantallas pequeñas, desliza la subnavegación hasta la pestaña activa
+  document.querySelectorAll('.subnav[data-page="'+page+'"] .sub-active').forEach(a=>{
+    var c=a.parentElement; c.scrollLeft=a.offsetLeft-(c.clientWidth-a.offsetWidth)/2;
+  });
   // cerrar menú móvil
   setMenu(false);
   // guardar en el hash para poder volver / compartir
@@ -1574,6 +1755,9 @@ function setMenu(open){
   nm.classList.toggle('open',open);
   if(hb){ hb.setAttribute('aria-expanded',open); hb.textContent=open?'✕':'☰'; hb.setAttribute('aria-label',open?'Cerrar menú':'Abrir menú'); }
 }
+// altura real de la cabecera fija, para que la subnavegación quede justo debajo
+function medirCabecera(){ document.documentElement.style.setProperty('--alto-cabecera',document.querySelector('header').offsetHeight+'px'); }
+medirCabecera(); window.addEventListener('resize',medirCabecera);
 function toggleMenu(){setMenu(!document.getElementById('navMob').classList.contains('open'));}
 // al pasar a pantalla grande se cierra el menú móvil
 window.addEventListener('resize',()=>{ if(window.innerWidth>992) setMenu(false); });
