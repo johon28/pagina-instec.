@@ -49,12 +49,22 @@ content:
     format: json
     list: true
     fields:
+      - name: grupo
+        label: Grupo
+        type: select
+        options:
+          values: [Documentos institucionales, Formatos para docentes]
       - name: nombre
         label: Nombre del documento
         type: string
         required: true
       - name: archivo
-        label: Archivo PDF (si se deja vacío, aparece "Próximamente")
+        label: Archivo para ver (PDF recomendado; si se deja vacío, aparece "Próximamente")
+        type: file
+        options:
+          media: documentos
+      - name: editable
+        label: Versión editable para descargar (Word o Excel, opcional, para formatos)
         type: file
         options:
           media: documentos
