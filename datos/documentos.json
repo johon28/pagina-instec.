@@ -1,36 +1,146 @@
 [
   {
+    "grupo": "Documentos institucionales",
+    "icono": "📋",
     "nombre": "Proyecto Educativo Institucional (PEI)",
-    "archivo": "/documentos/actualizacion-pei-2025.docx",
-    "detalle": "PEI",
-    "icono": "📋"
+    "detalle": "Actualización 2025",
+    "archivo": "/documentos/pei-2025.pdf",
+    "editable": ""
   },
   {
+    "grupo": "Documentos institucionales",
+    "icono": "📜",
     "nombre": "Manual de Convivencia Escolar",
-    "icono": "📜"
+    "detalle": "Actualización 2025",
+    "archivo": "/documentos/manual-de-convivencia-2025.pdf",
+    "editable": ""
   },
   {
+    "grupo": "Documentos institucionales",
+    "icono": "✅",
+    "nombre": "Sistema Institucional de Evaluación (SIEE)",
+    "detalle": "Actualización 2025",
+    "archivo": "/documentos/siee-2025.pdf",
+    "editable": ""
+  },
+  {
+    "grupo": "Documentos institucionales",
+    "icono": "📅",
     "nombre": "Calendario Académico",
-    "icono": "📅"
+    "detalle": "",
+    "archivo": "",
+    "editable": ""
   },
   {
+    "grupo": "Documentos institucionales",
+    "icono": "📊",
     "nombre": "Plan de Estudios por Área",
-    "icono": "📊"
+    "detalle": "",
+    "archivo": "",
+    "editable": ""
   },
   {
-    "nombre": "Sistema de Evaluación (SIEE)",
-    "icono": "✅"
-  },
-  {
+    "grupo": "Documentos institucionales",
+    "icono": "📈",
     "nombre": "Plan de Mejoramiento Institucional",
-    "icono": "📈"
+    "detalle": "",
+    "archivo": "",
+    "editable": ""
   },
   {
+    "grupo": "Documentos institucionales",
+    "icono": "🗳️",
     "nombre": "Actas de Gobierno Escolar",
-    "icono": "🗳️"
+    "detalle": "",
+    "archivo": "",
+    "editable": ""
   },
   {
+    "grupo": "Documentos institucionales",
+    "icono": "💰",
     "nombre": "Tabla de Costos 2026",
-    "icono": "💰"
+    "detalle": "",
+    "archivo": "",
+    "editable": ""
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "🗓️",
+    "nombre": "Plan de Clase – Preescolar",
+    "detalle": "Formato",
+    "archivo": "/documentos/plan-de-clase-preescolar.pdf",
+    "editable": "/documentos/plan-de-clase-preescolar.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "🗓️",
+    "nombre": "Plan de Clase – Unigrado",
+    "detalle": "Formato",
+    "archivo": "/documentos/plan-de-clase-unigrado.pdf",
+    "editable": "/documentos/plan-de-clase-unigrado.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "🎯",
+    "nombre": "Plan de Apoyo 2026",
+    "detalle": "Estudiantes con desempeño bajo",
+    "archivo": "/documentos/plan-de-apoyo-2026.pdf",
+    "editable": "/documentos/plan-de-apoyo-2026.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "📝",
+    "nombre": "Acta de Actividades Complementarias",
+    "detalle": "Final de periodo",
+    "archivo": "/documentos/acta-actividades-complementarias.pdf",
+    "editable": "/documentos/acta-actividades-complementarias.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "👦",
+    "nombre": "Observador del Estudiante – Preescolar",
+    "detalle": "Formato 2026",
+    "archivo": "/documentos/observador-estudiante-preescolar.pdf",
+    "editable": "/documentos/observador-estudiante-preescolar.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "🧒",
+    "nombre": "Observador del Estudiante – Primaria",
+    "detalle": "Formato 2026",
+    "archivo": "/documentos/observador-estudiante-primaria.pdf",
+    "editable": "/documentos/observador-estudiante-primaria.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "🧑",
+    "nombre": "Observador del Estudiante – Secundaria",
+    "detalle": "Formato 2026",
+    "archivo": "/documentos/observador-estudiante-secundaria.pdf",
+    "editable": "/documentos/observador-estudiante-secundaria.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "⚠️",
+    "nombre": "Registro de Faltas Tipo 1",
+    "detalle": "Formato",
+    "archivo": "/documentos/registro-faltas-tipo-1.pdf",
+    "editable": "/documentos/registro-faltas-tipo-1.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "⚖️",
+    "nombre": "Acta de Faltas Tipo 2 y 3",
+    "detalle": "Formato de acta de reunión",
+    "archivo": "/documentos/acta-faltas-tipo-2-y-3.pdf",
+    "editable": "/documentos/acta-faltas-tipo-2-y-3.docx"
+  },
+  {
+    "grupo": "Formatos para docentes",
+    "icono": "📒",
+    "nombre": "Planilla de Calificaciones 2026",
+    "detalle": "Excel",
+    "archivo": "/documentos/planilla-de-calificaciones-2026.xlsx",
+    "editable": "/documentos/planilla-de-calificaciones-2026.xlsx"
   }
 ]
