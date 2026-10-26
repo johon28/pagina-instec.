@@ -1,50 +1,36 @@
 [
   {
-    "icono": "📋",
     "nombre": "Proyecto Educativo Institucional (PEI)",
-    "detalle": "",
-    "archivo": ""
+    "archivo": "/documentos/actualizacion-pei-2025.docx",
+    "detalle": "PEI",
+    "icono": "📋"
   },
   {
-    "icono": "📜",
     "nombre": "Manual de Convivencia Escolar",
-    "detalle": "",
-    "archivo": ""
+    "icono": "📜"
   },
   {
-    "icono": "📅",
     "nombre": "Calendario Académico",
-    "detalle": "",
-    "archivo": ""
+    "icono": "📅"
   },
   {
-    "icono": "📊",
     "nombre": "Plan de Estudios por Área",
-    "detalle": "",
-    "archivo": ""
+    "icono": "📊"
   },
   {
-    "icono": "✅",
     "nombre": "Sistema de Evaluación (SIEE)",
-    "detalle": "",
-    "archivo": ""
+    "icono": "✅"
   },
   {
-    "icono": "📈",
     "nombre": "Plan de Mejoramiento Institucional",
-    "detalle": "",
-    "archivo": ""
+    "icono": "📈"
   },
   {
-    "icono": "🗳️",
     "nombre": "Actas de Gobierno Escolar",
-    "detalle": "",
-    "archivo": ""
+    "icono": "🗳️"
   },
   {
-    "icono": "💰",
     "nombre": "Tabla de Costos 2026",
-    "detalle": "",
-    "archivo": ""
+    "icono": "💰"
   }
 ]
